@@ -1,0 +1,558 @@
+{
+  "site": {
+    "name": "Grandeur",
+    "tagline": "Luxury Hotel & Resort",
+    "description": "Experience unparalleled luxury at Grandeur - where timeless elegance meets modern sophistication. A 5-star sanctuary for discerning travelers.",
+    "logo": {
+      "default": "https://placehold.co/140x50/1a1a1a/c9a962?text=GRANDEUR",
+      "white": "https://placehold.co/140x50/ffffff/1a1a1a?text=GRANDEUR",
+      "alt": "Grandeur Luxury Hotel Logo"
+    },
+    "seo": {
+      "title": "Grandeur - 5-Star Luxury Hotel & Resort",
+      "description": "Discover exceptional hospitality at Grandeur. World-class amenities, exquisite dining, and breathtaking views await you at our prestigious 5-star hotel.",
+      "keywords": [
+        "luxury hotel",
+        "5-star resort",
+        "premium accommodation",
+        "fine dining",
+        "spa resort",
+        "boutique hotel"
+      ],
+      "ogImage": "https://placehold.co/1200x630/1a1a1a/c9a962?text=Grandeur+Hotel"
+    },
+    "theme": {
+      "primaryColor": "#c9a962",
+      "secondaryColor": "#1a1a1a",
+      "backgroundColor": "#f8f7f4",
+      "accentColor": "#8b7355"
+    }
+  },
+  "navbar": {
+    "brandName": "Grandeur",
+    "brandMark": "",
+    "logo": {
+      "default": "/assets/images/logo.png",
+      "white": "https://placehold.co/140x50/ffffff/1a1a1a?text=GRANDEUR",
+      "alt": "Grandeur Luxury Hotel Logo"
+    },
+    "barLinks": [
+      {
+        "name": "About",
+        "href": "#about"
+      },
+      {
+        "name": "Rooms",
+        "href": "#floor"
+      },
+      {
+        "name": "Amenities",
+        "href": "#why-us"
+      },
+      {
+        "name": "Destinations",
+        "href": "#cities"
+      }
+    ],
+    "cta": {
+      "label": "Book Now",
+      "href": "#footer"
+    },
+    "menuLinks": [
+      {
+        "name": "Home",
+        "number": "01",
+        "href": "#hero"
+      },
+      {
+        "name": "About",
+        "number": "02",
+        "href": "#about"
+      },
+      {
+        "name": "Featured",
+        "number": "03",
+        "href": "#featured"
+      },
+      {
+        "name": "Rooms & Suites",
+        "number": "04",
+        "href": "#floor"
+      },
+      {
+        "name": "Why Choose Us",
+        "number": "05",
+        "href": "#why-us"
+      },
+      {
+        "name": "Destinations",
+        "number": "06",
+        "href": "#cities"
+      },
+      {
+        "name": "Testimonials",
+        "number": "07",
+        "href": "#testimonials"
+      },
+      {
+        "name": "Contact",
+        "number": "08",
+        "href": "#footer"
+      }
+    ],
+    "featured": {
+      "studioName": "Grandeur Hotel",
+      "image": "https://placehold.co/600x800/1a1a1a/c9a962?text=Featured",
+      "copyright": "2026 All rights reserved"
+    },
+    "contact": {
+      "email": "reservations@grandeur.com",
+      "phone": "+1 (555) 789-0123"
+    },
+    "socialLinks": [
+      {
+        "name": "Instagram",
+        "href": "https://instagram.com"
+      },
+      {
+        "name": "Facebook",
+        "href": "https://facebook.com"
+      },
+      {
+        "name": "Twitter",
+        "href": "https://twitter.com"
+      }
+    ]
+  },
+  "hero": {
+    "brandName": "Grandeur",
+    "description": "We help discerning travelers discover extraordinary stays with clarity—featuring curated accommodations and seamless luxury service.",
+    "image": "/assets/images/hero.avif",
+    "cta": {
+      "label": "View rooms",
+      "href": "#floor"
+    },
+    "conciergeCard": {
+      "avatar": "/assets/images/avatar/1.jpg",
+      "smallText": "Let's help you",
+      "mainText": "Talk to our concierge",
+      "href": "#footer"
+    }
+  },
+  "about": {
+    "sectionLabel": "About us",
+    "headline": "Our mission leads you to unforgettable stays",
+    "description": "We support discerning travelers with exceptional hospitality that streamlines comfort, elevates experiences, and brings tranquility.",
+    "image": "/assets/images/about.png",
+    "features": [
+      {
+        "icon": "building",
+        "title": "Luxury Experience",
+        "description": "We curate every detail of your stay, from premium amenities to personalized services. Each moment is designed to exceed expectations."
+      },
+      {
+        "icon": "file-text",
+        "title": "Tailored Service",
+        "description": "We assess your preferences, anticipate your needs, and craft bespoke experiences. Every detail is refined to ensure perfection."
+      }
+    ],
+    "statsBar": {
+      "label": "At a glance",
+      "headline": "Providing excellence, every step forward",
+      "stats": [
+        {
+          "value": "250",
+          "suffix": "+",
+          "label": "Luxury rooms"
+        },
+        {
+          "value": "50",
+          "suffix": "k",
+          "label": "Guests hosted"
+        },
+        {
+          "value": "15",
+          "suffix": "+",
+          "label": "Years excellence"
+        },
+        {
+          "value": "98",
+          "suffix": "%",
+          "label": "Guest satisfaction"
+        }
+      ]
+    }
+  },
+  "featuredPlace": {
+    "headline": "Inside our spaces",
+    "subtitle": "Room overview with elegant design",
+    "places": [
+      {
+        "id": "bar",
+        "title": "The Grandeur Bar",
+        "description": "The bar is the social heart of the hotel—a sophisticated space designed for craft cocktails, fine spirits, and elegant evenings.",
+        "image": "/assets/images/rooms/bar.png",
+        "size": "200 m2",
+        "type": "Lounge",
+        "style": "Art Deco"
+      },
+      {
+        "id": "cabana",
+        "title": "Private Cabana",
+        "description": "The cabana offers exclusive poolside luxury—a secluded retreat crafted for relaxation, privacy, and personalized service.",
+        "image": "/assets/images/rooms/cabana.png",
+        "size": "50 m2",
+        "type": "Outdoor",
+        "style": "Tropical"
+      },
+      {
+        "id": "premium-deluxe",
+        "title": "Premium Deluxe Room",
+        "description": "The premium deluxe room is the epitome of comfort—a spacious retreat featuring designer furnishings, panoramic views, and bespoke amenities.",
+        "image": "/assets/images/rooms/premium.png",
+        "size": "65 m2",
+        "type": "Accommodation",
+        "style": "Contemporary"
+      },
+      {
+        "id": "spa",
+        "title": "Luxury Spa",
+        "description": "The spa is a sanctuary of wellness—a tranquil space meant for relaxation, rejuvenation, and inner peace.",
+        "image": "/assets/images/rooms/spa.png",
+        "size": "400 m2",
+        "type": "Wellness",
+        "style": "Zen"
+      },
+      {
+        "id": "lobby",
+        "title": "Grand Lobby",
+        "description": "The grand lobby is the heart of the hotel—a space designed for comfort, elegance, and lasting first impressions.",
+        "image": "/assets/images/rooms/lobby.png",
+        "size": "500 m2",
+        "type": "Reception",
+        "style": "Marble"
+      }
+    ]
+  },
+  "floor": {
+    "sectionLabel": "Floor planning",
+    "headline": "Explore every level with our detailed floor planning",
+    "rooms": [
+      {
+        "id": "bar",
+        "name": "The Grandeur Bar",
+        "description": "The bar is the social heart of the hotel—a sophisticated space designed for craft cocktails, fine spirits, and elegant evenings with live jazz performances.",
+        "image": "/assets/images/floor/bar.jpg",
+        "details": {
+          "rooms": "1",
+          "location": "Ground Floor, Grandeur Tower",
+          "designer": "Studio Luxe Interiors",
+          "available": "Premium Spirits, Craft Cocktails, Live Music, VIP Lounge",
+          "size": "200 sqm"
+        }
+      },
+      {
+        "id": "cabana",
+        "name": "Private Cabana",
+        "description": "The cabana offers exclusive poolside luxury—a secluded retreat crafted for relaxation, privacy, and personalized service with dedicated attendants.",
+        "image": "/assets/images/floor/cabana.jpg",
+        "details": {
+          "rooms": "1",
+          "location": "Poolside, Garden Level",
+          "designer": "Tropical Design Co.",
+          "available": "Daybed, Mini Bar, Personal Safe, Dedicated Attendant",
+          "size": "50 sqm"
+        }
+      },
+      {
+        "id": "deluxe",
+        "name": "Deluxe Room",
+        "description": "The deluxe room is the essence of comfort—a space designed for relaxation, style, and modern living with premium bedding and stunning city views.",
+        "image": "/assets/images/floor/premium.png",
+        "details": {
+          "rooms": "1",
+          "location": "Floors 5-10, Grandeur Tower",
+          "designer": "Studio Luxe Interiors",
+          "available": "King Bed, City View, Rain Shower, Mini Bar",
+          "size": "45 sqm"
+        }
+      },
+      {
+        "id": "spa",
+        "name": "Luxury Spa",
+        "description": "The spa is a sanctuary of wellness—a tranquil space featuring thermal pools, steam rooms, and world-class treatments for complete rejuvenation and inner peace.",
+        "image": "/assets/images/floor/spa.png",
+        "details": {
+          "rooms": "8",
+          "location": "Level B1, Wellness Wing",
+          "designer": "Zen Wellness Architecture",
+          "available": "Thermal Pools, Steam Room, Treatment Suites, Relaxation Lounge",
+          "size": "400 sqm"
+        }
+      }
+    ],
+    "cta": {
+      "primary": {
+        "label": "Book A Visit",
+        "href": "#footer"
+      },
+      "secondary": {
+        "label": "Call Us Now",
+        "href": "tel:+15557890123"
+      }
+    }
+  },
+  "whyUs": {
+    "sectionLabel": "Why us",
+    "headline": "Luxury hospitality experts",
+    "featuredCard": {
+      "label": "Award-winning excellence",
+      "headline": "50k+ guests choose our trusted luxury hotels",
+      "description": "Choosing us matters — experience and personalized service shape every memorable stay. We help guests create unforgettable moments with confidence.",
+      "image": "/assets/images/front.png"
+    },
+    "stats": [
+      {
+        "value": "98%",
+        "label": "Satisfaction rate",
+        "icon": "refresh",
+        "description": "Guests consistently rate their experience as exceptional across all our properties."
+      },
+      {
+        "value": "4 in 5",
+        "label": "Return guests",
+        "icon": "building",
+        "description": "More than 80% of our guests return for another stay within two years."
+      },
+      {
+        "value": "50+",
+        "label": "Awards won",
+        "icon": "award",
+        "description": "Recognized globally by leading hospitality and travel publications."
+      },
+      {
+        "value": "95%",
+        "label": "Recommend us",
+        "icon": "users",
+        "description": "Most guests recommend our hotels after experiencing our signature service."
+      }
+    ]
+  },
+  "cities": {
+    "sectionLabel": "Locations",
+    "headline": "Featured cities",
+    "description": "Experience the Grandeur difference across our collection of prestigious properties in the world's most coveted destinations.",
+    "locations": [
+      {
+        "id": "dubai",
+        "city": "Dubai",
+        "country": "United Arab Emirates",
+        "image": "/assets/images/cities/dubai.jpg",
+        "description": "Rising majestically on the Palm, offering unrivaled views of the Arabian Gulf.",
+        "rooms": 320,
+        "rating": 4.9
+      },
+      {
+        "id": "paris",
+        "city": "Paris",
+        "country": "France",
+        "image": "/assets/images/cities/paris.jpg",
+        "description": "A Haussmanian gem steps from the Champs-Elysees, embodying French elegance.",
+        "rooms": 180,
+        "rating": 4.8
+      },
+      {
+        "id": "new-york",
+        "city": "New York",
+        "country": "United States",
+        "image": "/assets/images/cities/ny.jpg",
+        "description": "An iconic Manhattan landmark overlooking Central Park's lush landscapes.",
+        "rooms": 250,
+        "rating": 4.9
+      },
+      {
+        "id": "tokyo",
+        "city": "Tokyo",
+        "country": "Japan",
+        "image": "/assets/images/cities/tokyo.jpg",
+        "description": "Where traditional Japanese hospitality meets contemporary luxury.",
+        "rooms": 200,
+        "rating": 4.9
+      },
+      {
+        "id": "london",
+        "city": "London",
+        "country": "United Kingdom",
+        "image": "https://placehold.co/600x800/1a1a1a/c9a962?text=London",
+        "description": "A regal residence in Mayfair, steeped in British heritage and sophistication.",
+        "rooms": 220,
+        "rating": 4.8
+      }
+    ]
+  },
+  "testimonials": {
+    "sectionLabel": "Testimonials",
+    "headline": "What our guests say",
+    "items": [
+      {
+        "id": "testimonial-1",
+        "name": "Maria Thompson",
+        "role": "Frequent Guest",
+        "quote": "Grandeur made our anniversary celebration incredibly special. Their attention to detail, responsiveness, and personalized service helped us create memories that will last forever.",
+        "avatar": "/assets/images/avatar/1.jpg"
+      },
+      {
+        "id": "testimonial-2",
+        "name": "Brian Ruiz",
+        "role": "First-time Guest",
+        "quote": "We felt supported through every step. Clear communication, quick responses, and genuine care made our entire stay smooth and stress-free.",
+        "avatar": "/assets/images/avatar/2.jpg"
+      },
+      {
+        "id": "testimonial-3",
+        "name": "Sarah Mitchell",
+        "role": "Business Traveler",
+        "quote": "The business facilities are exceptional. From the meeting rooms to the high-speed WiFi, everything was perfectly suited for productive work trips.",
+        "avatar": "/assets/images/avatar/3.jpg"
+      },
+      {
+        "id": "testimonial-4",
+        "name": "David Chen",
+        "role": "Family Vacation",
+        "quote": "Traveling with kids can be challenging, but Grandeur made it effortless. The staff went above and beyond to ensure our whole family felt welcome.",
+        "avatar": "/assets/images/avatar/4.jpg"
+      }
+    ]
+  },
+  "faq": {
+    "sectionLabel": "FAQ",
+    "headline": "Frequent questions",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "How does the booking process work?",
+        "answer": "We begin with understanding your preferences, travel dates, and room requirements. Our team then presents tailored options, arranges viewings if needed, and guides you through booking and payment. Every step is supported with clarity and transparency to ensure a smooth experience from start to finish."
+      },
+      {
+        "id": "faq-2",
+        "question": "Do you help with airport transfers?",
+        "answer": "Yes, we offer complimentary luxury airport transfers for all suite guests. Standard room guests can arrange transfers for a fee. Our fleet includes Mercedes S-Class and Rolls-Royce vehicles for your comfort."
+      },
+      {
+        "id": "faq-3",
+        "question": "Can you coordinate special occasions and events?",
+        "answer": "Absolutely. We arrange personalized celebrations, romantic dinners, and special events to ensure your occasion exceeds expectations. Our dedicated events team handles every detail before you arrive."
+      },
+      {
+        "id": "faq-4",
+        "question": "Do you assist with dining reservations?",
+        "answer": "Yes, our concierge team can arrange reservations at our five signature restaurants or recommend and book external dining experiences. We accommodate all dietary requirements with advance notice."
+      },
+      {
+        "id": "faq-5",
+        "question": "Are virtual tours available for international guests?",
+        "answer": "Yes, we offer immersive virtual tours of our rooms, suites, and amenities for guests who cannot visit in person before booking. Contact our team to schedule a personalized video walkthrough."
+      }
+    ],
+    "contactCard": {
+      "image": "/assets/images/faq.jpg",
+      "text": "Have more questions? Our team is happy to help.",
+      "cta": {
+        "label": "Get in touch",
+        "href": "#footer"
+      }
+    }
+  },
+  "footer": {
+    "cta": {
+      "avatar": "https://placehold.co/100x100/c9a962/1a1a1a?text=GH",
+      "headline": "Let's plan your perfect stay",
+      "subtitle": "Ready to experience luxury? Our concierge team is here to help",
+      "buttonLabel": "Get in touch",
+      "buttonHref": "mailto:reservations@grandeur.com",
+      "backgroundImage": "/assets/images/footer.jpg"
+    },
+    "brand": {
+      "name": "Grandeur"
+    },
+    "navMenu": {
+      "title": "Nav menu",
+      "links": [
+        {
+          "name": "Home",
+          "href": "#hero"
+        },
+        {
+          "name": "Rooms",
+          "href": "#floor"
+        },
+        {
+          "name": "Amenities",
+          "href": "#why-us"
+        },
+        {
+          "name": "Destinations",
+          "href": "#cities"
+        },
+        {
+          "name": "Testimonials",
+          "href": "#testimonials"
+        },
+        {
+          "name": "Contact",
+          "href": "#footer"
+        }
+      ]
+    },
+    "pages": {
+      "title": "Pages",
+      "links": [
+        {
+          "name": "About us",
+          "href": "#about"
+        },
+        {
+          "name": "FAQ",
+          "href": "#faq"
+        },
+        {
+          "name": "Privacy Policy",
+          "href": "/privacy"
+        },
+        {
+          "name": "Terms",
+          "href": "/terms"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "phone": "+1 (555) 789-0123",
+      "email": "reservations@grandeur.com",
+      "address": "123 Luxury Avenue, Manhattan, New York"
+    },
+    "newsletter": {
+      "description": "Subscribe to our newsletter to get exclusive offers, travel inspiration & more",
+      "placeholder": "Your email address",
+      "buttonText": "Subscribe"
+    },
+    "socialLinks": [
+      {
+        "name": "Twitter",
+        "href": "https://twitter.com",
+        "icon": "twitter"
+      },
+      {
+        "name": "Facebook",
+        "href": "https://facebook.com",
+        "icon": "facebook"
+      },
+      {
+        "name": "Instagram",
+        "href": "https://instagram.com",
+        "icon": "instagram"
+      }
+    ],
+    "copyright": "2026 Grandeur Hotels & Resorts. All rights reserved."
+  }
+}
