@@ -131,7 +131,7 @@ export function About() {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
             {about.statsBar.stats.map((stat, index) => (
               <motion.div
                 key={stat.label}

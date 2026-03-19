@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Grandeur - 5-Star Luxury Hotel & Resort",
-  description: "Experience unparalleled luxury at Grandeur - where timeless elegance meets modern sophistication. A 5-star sanctuary for discerning travelers.",
+  title: "Ella Q8 - 5-Star Luxury Hotel & Resort",
+  description: "Experience unparalleled luxury at Ella Q8 - where timeless elegance meets modern sophistication. A 5-star sanctuary for discerning travelers.",
 };
 
 export default function RootLayout({

@@ -24,19 +24,19 @@ export default function Home() {
       <FeaturedPlace />
 
       {/* Floor Section */}
-      <Floor />
+      {/* <Floor /> */}
 
       {/* Why Us Section */}
-      <WhyUs />
+      {/* <WhyUs /> */}
 
       {/* Cities Section */}
-      <Cities />
+      {/* <Cities /> */}
 
       {/* Testimonials Section */}
       <Testimonials />
 
       {/* FAQ Section */}
-      <FAQ />
+      {/* <FAQ /> */}
 
       {/* Footer Section */}
       <Footer />

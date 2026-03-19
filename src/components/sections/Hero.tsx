@@ -60,11 +60,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="overflow-hidden"
+            className="overflow-visible"
           >
-            <h1 className="font-heading text-[clamp(4rem,15vw,14rem)] font-normal text-white leading-[0.85] tracking-tighter">
+            <h1 className="font-heading text-[clamp(4rem,15vw,14rem)] font-normal text-white leading-none tracking-tighter">
               {hero.brandName}
             </h1>
+            <p className="text-[clamp(1rem,2vw,1.25rem)] font-medium uppercase text-white/50 tracking-[16px] mt-">
+              {hero.brandTagline}
+            </p>
           </motion.div>
 
           {/* Concierge Card - Floating on Bottom Right */}

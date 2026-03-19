@@ -1,16 +1,16 @@
 {
   "site": {
-    "name": "Grandeur",
-    "tagline": "Luxury Hotel & Resort",
-    "description": "Experience unparalleled luxury at Grandeur - where timeless elegance meets modern sophistication. A 5-star sanctuary for discerning travelers.",
+    "name": "Ella Q8",
+    "tagline": "Authentic Mountain Lodging + Local Tourism",
+    "description": "Discover warm family-run rooms and curated Ella tourism experiences in the heart of Ella Town. Stay close to waterfall trails, tea estates, and cultural tours.",
     "logo": {
-      "default": "https://placehold.co/140x50/1a1a1a/c9a962?text=GRANDEUR",
-      "white": "https://placehold.co/140x50/ffffff/1a1a1a?text=GRANDEUR",
-      "alt": "Grandeur Luxury Hotel Logo"
+      "default": "https://placehold.co/140x50/1a1a1a/c9a962?text=Ella Q8",
+      "white": "https://placehold.co/140x50/ffffff/1a1a1a?text=Ella Q8",
+      "alt": "Ella Q8 Luxury Hotel Logo"
     },
     "seo": {
-      "title": "Grandeur - 5-Star Luxury Hotel & Resort",
-      "description": "Discover exceptional hospitality at Grandeur. World-class amenities, exquisite dining, and breathtaking views await you at our prestigious 5-star hotel.",
+      "title": "Ella Q8 - 5-Star Luxury Hotel & Resort",
+      "description": "Discover exceptional hospitality at Ella Q8. World-class amenities, exquisite dining, and breathtaking views await you at our prestigious 5-star hotel.",
       "keywords": [
         "luxury hotel",
         "5-star resort",
@@ -19,7 +19,7 @@
         "spa resort",
         "boutique hotel"
       ],
-      "ogImage": "https://placehold.co/1200x630/1a1a1a/c9a962?text=Grandeur+Hotel"
+      "ogImage": "https://placehold.co/1200x630/1a1a1a/c9a962?text=Ella Q8+Hotel"
     },
     "theme": {
       "primaryColor": "#c9a962",
@@ -29,12 +29,12 @@
     }
   },
   "navbar": {
-    "brandName": "Grandeur",
+    "brandName": "Ella Q8",
     "brandMark": "",
     "logo": {
-      "default": "/assets/images/logo.png",
-      "white": "https://placehold.co/140x50/ffffff/1a1a1a?text=GRANDEUR",
-      "alt": "Grandeur Luxury Hotel Logo"
+      "default": "/assets/images/logo2.png",
+      "white": "https://placehold.co/140x50/ffffff/1a1a1a?text=Ella Q8",
+      "alt": "Ella Q8 Luxury Hotel Logo"
     },
     "barLinks": [
       {
@@ -101,12 +101,12 @@
       }
     ],
     "featured": {
-      "studioName": "Grandeur Hotel",
+      "studioName": "Ella Q8 Hotel",
       "image": "https://placehold.co/600x800/1a1a1a/c9a962?text=Featured",
       "copyright": "2026 All rights reserved"
     },
     "contact": {
-      "email": "reservations@grandeur.com",
+      "email": "reservations@Ella Q8.com",
       "phone": "+1 (555) 789-0123"
     },
     "socialLinks": [
@@ -125,9 +125,10 @@
     ]
   },
   "hero": {
-    "brandName": "Grandeur",
-    "description": "We help discerning travelers discover extraordinary stays with clarity—featuring curated accommodations and seamless luxury service.",
-    "image": "/assets/images/hero.avif",
+    "brandName": "Ella Q8",
+    "brandTagline": "International",
+    "description": "Cozy rooms, family hospitality, and local guides for hiking, tea estate tours, and hidden waterfalls. Start your Ella Town getaway now.",
+    "image": "/assets/images/hero.png",
     "cta": {
       "label": "View rooms",
       "href": "#floor"
@@ -140,31 +141,26 @@
     }
   },
   "about": {
-    "sectionLabel": "About us",
-    "headline": "Our mission leads you to unforgettable stays",
-    "description": "We support discerning travelers with exceptional hospitality that streamlines comfort, elevates experiences, and brings tranquility.",
-    "image": "/assets/images/about.png",
+    "sectionLabel": "About Ella Town",
+    "headline": "Your gateway to authentic living and local adventures",
+    "description": "We offer comfortable rooms and full tourism planning in Ella Town: hikes, waterfalls, tea estate visits, village walks, and culture-rich experiences.",
+    "image": "/assets/images/about3.jpg",
     "features": [
       {
         "icon": "building",
-        "title": "Luxury Experience",
-        "description": "We curate every detail of your stay, from premium amenities to personalized services. Each moment is designed to exceed expectations."
+        "title": "Comfortable rooms",
+        "description": "Cozy private and family rooms with local décor, warm service, and in-room essentials for a restful stay in Ella Town."
       },
       {
         "icon": "file-text",
-        "title": "Tailored Service",
-        "description": "We assess your preferences, anticipate your needs, and craft bespoke experiences. Every detail is refined to ensure perfection."
+        "title": "Tourism services",
+        "description": "Guided hiking trails, waterfall trips, tea estate visits, adventure day tours, and cultural experiences arranged by our local team."
       }
     ],
     "statsBar": {
       "label": "At a glance",
       "headline": "Providing excellence, every step forward",
       "stats": [
-        {
-          "value": "250",
-          "suffix": "+",
-          "label": "Luxury rooms"
-        },
         {
           "value": "50",
           "suffix": "k",
@@ -176,7 +172,7 @@
           "label": "Years excellence"
         },
         {
-          "value": "98",
+          "value": "99",
           "suffix": "%",
           "label": "Guest satisfaction"
         }
@@ -184,53 +180,58 @@
     }
   },
   "featuredPlace": {
-    "headline": "Inside our spaces",
-    "subtitle": "Room overview with elegant design",
+    "headline": "Featured Ella Town stays and services",
+    "subtitle": "Rooms and local tour highlights tailored for visitors",
     "places": [
       {
-        "id": "bar",
-        "title": "The Grandeur Bar",
-        "description": "The bar is the social heart of the hotel—a sophisticated space designed for craft cocktails, fine spirits, and elegant evenings.",
-        "image": "/assets/images/rooms/bar.png",
-        "size": "200 m2",
-        "type": "Lounge",
-        "style": "Art Deco"
+        "id": "room-standard",
+        "title": "Standard Mountain Room",
+        "description": "Bright and comfortable room with tea estate views, queen bed, ensuite bathroom and local artwork.",
+        "image": "/assets/images/rooms/6.jpg",
+        "size": "28 m2",
+        "type": "Room",
+        "style": "Warm rustic",
+        "amount": "$120/night"
       },
       {
-        "id": "cabana",
-        "title": "Private Cabana",
-        "description": "The cabana offers exclusive poolside luxury—a secluded retreat crafted for relaxation, privacy, and personalized service.",
-        "image": "/assets/images/rooms/cabana.png",
-        "size": "50 m2",
-        "type": "Outdoor",
-        "style": "Tropical"
+        "id": "family-suite",
+        "title": "Family Suite",
+        "description": "Spacious suite for families and groups with separate living area, kitchenette, and scenic balcony.",
+        "image": "/assets/images/rooms/2.jpg",
+        "size": "55 m2",
+        "type": "Suite",
+        "style": "Local cottage",
+        "amount": "$220/night"
       },
       {
-        "id": "premium-deluxe",
-        "title": "Premium Deluxe Room",
-        "description": "The premium deluxe room is the epitome of comfort—a spacious retreat featuring designer furnishings, panoramic views, and bespoke amenities.",
-        "image": "/assets/images/rooms/premium.png",
-        "size": "65 m2",
-        "type": "Accommodation",
-        "style": "Contemporary"
+        "id": "tee-estate-tour",
+        "title": "Tea Estate & Waterfall Tour",
+        "description": "Half-day guided tour combining a local tea estate walk with a visit to the famous Ella waterfalls. Includes picnic setup and local snacks.",
+        "image": "/assets/images/rooms/3.jpg",
+        "size": "-",
+        "type": "Tour",
+        "style": "Outdoor",
+        "amount": "$75/person"
       },
       {
-        "id": "spa",
-        "title": "Luxury Spa",
-        "description": "The spa is a sanctuary of wellness—a tranquil space meant for relaxation, rejuvenation, and inner peace.",
-        "image": "/assets/images/rooms/spa.png",
-        "size": "400 m2",
-        "type": "Wellness",
-        "style": "Zen"
+        "id": "village-hike",
+        "title": "Village Hike Experience",
+        "description": "Guided hike through hidden village trails, ending with a traditional village lunch alongside a local family.",
+        "image": "/assets/images/rooms/4.jpg",
+        "size": "-",
+        "type": "Tour",
+        "style": "Cultural",
+        "amount": "$65/person"
       },
       {
-        "id": "lobby",
-        "title": "Grand Lobby",
-        "description": "The grand lobby is the heart of the hotel—a space designed for comfort, elegance, and lasting first impressions.",
-        "image": "/assets/images/rooms/lobby.png",
-        "size": "500 m2",
-        "type": "Reception",
-        "style": "Marble"
+        "id": "sunrise-ella-rock",
+        "title": "Sunrise at Ella Rock",
+        "description": "Sunrise trek to Ella Rock with photography stops, packed breakfast, and pick-up/drop-off included.",
+        "image": "/assets/images/rooms/5.jpg",
+        "size": "-",
+        "type": "Tour",
+        "style": "Adventure",
+        "amount": "$85/person"
       }
     ]
   },
@@ -240,12 +241,12 @@
     "rooms": [
       {
         "id": "bar",
-        "name": "The Grandeur Bar",
+        "name": "The Ella Q8 Bar",
         "description": "The bar is the social heart of the hotel—a sophisticated space designed for craft cocktails, fine spirits, and elegant evenings with live jazz performances.",
         "image": "/assets/images/floor/bar.jpg",
         "details": {
           "rooms": "1",
-          "location": "Ground Floor, Grandeur Tower",
+          "location": "Ground Floor, Ella Q8 Tower",
           "designer": "Studio Luxe Interiors",
           "available": "Premium Spirits, Craft Cocktails, Live Music, VIP Lounge",
           "size": "200 sqm"
@@ -271,7 +272,7 @@
         "image": "/assets/images/floor/premium.png",
         "details": {
           "rooms": "1",
-          "location": "Floors 5-10, Grandeur Tower",
+          "location": "Floors 5-10, Ella Q8 Tower",
           "designer": "Studio Luxe Interiors",
           "available": "King Bed, City View, Rain Shower, Mini Bar",
           "size": "45 sqm"
@@ -341,7 +342,7 @@
   "cities": {
     "sectionLabel": "Locations",
     "headline": "Featured cities",
-    "description": "Experience the Grandeur difference across our collection of prestigious properties in the world's most coveted destinations.",
+    "description": "Experience the Ella Q8 difference across our collection of prestigious properties in the world's most coveted destinations.",
     "locations": [
       {
         "id": "dubai",
@@ -392,66 +393,66 @@
   },
   "testimonials": {
     "sectionLabel": "Testimonials",
-    "headline": "What our guests say",
+    "headline": "What Ella Town visitors share",
     "items": [
       {
         "id": "testimonial-1",
-        "name": "Maria Thompson",
-        "role": "Frequent Guest",
-        "quote": "Grandeur made our anniversary celebration incredibly special. Their attention to detail, responsiveness, and personalized service helped us create memories that will last forever.",
+        "name": "Noor Khan",
+        "role": "Nature Traveler",
+        "quote": "The room was warm, clean, and close to all the best trails. The local tour to the tea estate was the highlight of our trip.",
         "avatar": "/assets/images/avatar/1.jpg"
       },
       {
         "id": "testimonial-2",
-        "name": "Brian Ruiz",
-        "role": "First-time Guest",
-        "quote": "We felt supported through every step. Clear communication, quick responses, and genuine care made our entire stay smooth and stress-free.",
+        "name": "Ayesha Dissanayake",
+        "role": "Couple",
+        "quote": "Our guide made every place easy to reach and the local food recommendations were superb. It felt like you were staying with family.",
         "avatar": "/assets/images/avatar/2.jpg"
       },
       {
         "id": "testimonial-3",
-        "name": "Sarah Mitchell",
-        "role": "Business Traveler",
-        "quote": "The business facilities are exceptional. From the meeting rooms to the high-speed WiFi, everything was perfectly suited for productive work trips.",
+        "name": "Liam Ford",
+        "role": "Adventure Seeker",
+        "quote": "Ella Rock trek and waterfalls trip were perfectly organized. Great safety prep, friendly guides, and stunning views.",
         "avatar": "/assets/images/avatar/3.jpg"
       },
       {
         "id": "testimonial-4",
-        "name": "David Chen",
-        "role": "Family Vacation",
-        "quote": "Traveling with kids can be challenging, but Grandeur made it effortless. The staff went above and beyond to ensure our whole family felt welcome.",
+        "name": "Priya Nair",
+        "role": "Family Traveler",
+        "quote": "Children loved the nature trails and the room gave us everything we needed. The entire team helped us make a memorable holiday.",
         "avatar": "/assets/images/avatar/4.jpg"
       }
     ]
   },
   "faq": {
     "sectionLabel": "FAQ",
-    "headline": "Frequent questions",
+    "headline": "Frequently asked questions",
     "items": [
       {
         "id": "faq-1",
-        "question": "How does the booking process work?",
-        "answer": "We begin with understanding your preferences, travel dates, and room requirements. Our team then presents tailored options, arranges viewings if needed, and guides you through booking and payment. Every step is supported with clarity and transparency to ensure a smooth experience from start to finish."
+        "question": "How can I book a room in Ella Town?",
+        "answer": "Use our online booking form or contact our reservation line with your dates and number of guests. We confirm availability, room preferences, and can bundle tourism experiences with your stay."
       },
       {
         "id": "faq-2",
-        "question": "Do you help with airport transfers?",
-        "answer": "Yes, we offer complimentary luxury airport transfers for all suite guests. Standard room guests can arrange transfers for a fee. Our fleet includes Mercedes S-Class and Rolls-Royce vehicles for your comfort."
+        "question": "Can you help plan local tours and activities?",
+        "answer": "Yes. We offer guided hikes, waterfall trips, tea estate visits, train journeys, and village tours. Packages can be arranged daily to match your pace."
       },
       {
         "id": "faq-3",
-        "question": "Can you coordinate special occasions and events?",
-        "answer": "Absolutely. We arrange personalized celebrations, romantic dinners, and special events to ensure your occasion exceeds expectations. Our dedicated events team handles every detail before you arrive."
+        "question": "Is breakfast included?",
+        "answer": "Our room rates include a local Sri Lankan breakfast. We also offer optional meal packages for lunch and dinner with traditional and international options."
       },
       {
         "id": "faq-4",
-        "question": "Do you assist with dining reservations?",
-        "answer": "Yes, our concierge team can arrange reservations at our five signature restaurants or recommend and book external dining experiences. We accommodate all dietary requirements with advance notice."
+        "question": "What is the check-in/check-out time?",
+        "answer": "Check-in is from 2:00 PM and check-out is by 11:00 AM. Early check-in or late check-out can be requested subject to availability."
       },
       {
         "id": "faq-5",
-        "question": "Are virtual tours available for international guests?",
-        "answer": "Yes, we offer immersive virtual tours of our rooms, suites, and amenities for guests who cannot visit in person before booking. Contact our team to schedule a personalized video walkthrough."
+        "question": "Do you offer transport from Ella train station?",
+        "answer": "We offer pickup and drop-off service from Ella train station and bus terminal, plus airport transfers on request."
       }
     ],
     "contactCard": {
@@ -465,15 +466,15 @@
   },
   "footer": {
     "cta": {
-      "avatar": "https://placehold.co/100x100/c9a962/1a1a1a?text=GH",
-      "headline": "Let's plan your perfect stay",
-      "subtitle": "Ready to experience luxury? Our concierge team is here to help",
-      "buttonLabel": "Get in touch",
-      "buttonHref": "mailto:reservations@grandeur.com",
-      "backgroundImage": "/assets/images/footer.jpg"
+      "avatar": "https://placehold.co/100x100/c9a962/1a1a1a?text=EQ",
+      "headline": "Let’s book your Ella Q8 adventure",
+      "subtitle": "Rooms, tours, and custom service ready for your arrival",
+      "buttonLabel": "Contact us",
+      "buttonHref": "mailto:hello@ellatownstays.com",
+      "backgroundImage": "/assets/images/footer2.jpg"
     },
     "brand": {
-      "name": "Grandeur"
+      "name": "Ella Q8"
     },
     "navMenu": {
       "title": "Nav menu",
@@ -527,9 +528,9 @@
     },
     "contact": {
       "title": "Contact",
-      "phone": "+1 (555) 789-0123",
-      "email": "reservations@grandeur.com",
-      "address": "123 Luxury Avenue, Manhattan, New York"
+      "phone": "+94 77 123 4567",
+      "email": "hello@ellatownstays.com",
+      "address": "123 Ella Road, Ella Town, Sri Lanka"
     },
     "newsletter": {
       "description": "Subscribe to our newsletter to get exclusive offers, travel inspiration & more",
@@ -553,6 +554,6 @@
         "icon": "instagram"
       }
     ],
-    "copyright": "2026 Grandeur Hotels & Resorts. All rights reserved."
+    "copyright": "2026 Ella Q8 Hotels & Resorts. All rights reserved."
   }
 }

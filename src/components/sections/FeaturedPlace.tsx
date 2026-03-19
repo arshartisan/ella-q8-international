@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { LayoutGrid, Bed, Heart } from "lucide-react";
+import { LayoutGrid, Bed, Heart, DollarSign } from "lucide-react";
 import Image from "next/image";
 import placeholderData from "@/data/placeholder.json";
 
@@ -28,7 +28,11 @@ export function FeaturedPlace() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{
+            duration: 0.5,
+            delay: 0.1,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
           className="mt-4 text-muted-foreground tracking-tighter"
         >
           {featuredPlace.subtitle}
@@ -59,6 +63,7 @@ interface PlaceCardProps {
     size: string;
     type: string;
     style: string;
+    amount: string;
   };
   index: number;
   totalCards: number;
@@ -78,7 +83,7 @@ function PlaceCard({ place, index, totalCards }: PlaceCardProps) {
   const scale = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    [0.95, 1, 1 - (totalCards - index - 1) * 0.02]
+    [0.95, 1, 1 - (totalCards - index - 1) * 0.02],
   );
 
   return (
@@ -106,7 +111,7 @@ function PlaceCard({ place, index, totalCards }: PlaceCardProps) {
           <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-between order-2 md:order-1">
             <div className="space-y-4">
               {/* Title */}
-              <h3 className="font-body capitalize text-2xl md:text-3xl font-semibold tracking-tighter">
+              <h3 className="font-heading capitalize text-2xl md:text-4xl font-semibold tracking-tighter">
                 {place.title}
               </h3>
 
@@ -114,10 +119,14 @@ function PlaceCard({ place, index, totalCards }: PlaceCardProps) {
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-md tracking-tighter">
                 {place.description}
               </p>
+              {/* Amount prominent */}
+              <p className="text-primary font-semibold text-2xl md:text-4xl leading-tight capitalize tracking-tighter">
+                {place.amount}
+              </p>
             </div>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2 mt-8 pt-8">
+            <div className="flex flex-wrap gap-2 mt-4 pt-2">
               {/* Size Tag */}
               <div className="flex items-center gap-2 text-sm text-muted-foreground bg-black/5 px-2.5 py-1">
                 <LayoutGrid className="w-4 h-4" strokeWidth={1.5} />
@@ -134,6 +143,12 @@ function PlaceCard({ place, index, totalCards }: PlaceCardProps) {
               <div className="flex items-center gap-2 text-sm text-muted-foreground bg-black/5 px-2.5 py-1">
                 <Heart className="w-4 h-4" strokeWidth={1.5} />
                 <span className="tracking-tighter">{place.style}</span>
+              </div>
+
+              {/* Amount Tag */}
+              <div className="flex items-center gap-2 text-sm text-muted-foreground bg-black/5 px-2.5 py-1">
+                <DollarSign className="w-4 h-4" strokeWidth={1.5} />
+                <span className="tracking-tighter">{place.amount}</span>
               </div>
             </div>
           </div>
