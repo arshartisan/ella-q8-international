@@ -2,25 +2,26 @@
 
 import { motion } from "framer-motion";
 import { Star, ChevronDown, Calendar, Users, MapPin } from "lucide-react";
-import Image from "next/image";
 import placeholderData from "@/data/placeholder.json";
 
 const { hero } = placeholderData;
+
+const EASE_OUT = [0.23, 1, 0.32, 1] as const;
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    transition: { duration: 0.4, ease: EASE_OUT },
   },
 };
 
@@ -35,12 +36,12 @@ function Badge({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
         delay,
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        duration: 0.35,
+        ease: EASE_OUT,
       }}
       className={`absolute flex items-center gap-2 px-4 py-2 rounded-full bg-foreground/80 backdrop-blur-md text-white text-sm font-medium shadow-lg ${className}`}
     >
@@ -54,12 +55,23 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full overflow-hidden bg-background"
+      className="relative min-h-screen w-full overflow-hidden "
+      style={{
+        backgroundImage: `url(${hero.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      {/* Background gradient overlay for warm tone */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-background" />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/40" />
+      {/* Bottom gradient for smooth transition to next section */}
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" /> */}
 
-      <div className="relative z-10 flex flex-col min-h-screen px-4 md:px-8 lg:px-12 pt-28 md:pt-32 pb-6">
+      {/* Inset rounded border frame */}
+      <div className="absolute inset-3 md:inset-5 lg:inset-6 rounded-3xl md:rounded-[2rem] border-2 border-white/50 z-10 pointer-events-none" />
+
+      <div className="relative z-10 flex flex-col justify-between min-h-screen px-4 md:px-8 lg:px-12 pt-28 md:pt-32 pb-6">
         {/* Headline */}
         <motion.div
           variants={container}
@@ -69,7 +81,7 @@ export function Hero() {
         >
           <motion.h1
             variants={item}
-            className="font-heading text-[clamp(2.5rem,6vw+1rem,5.5rem)] font-bold tracking-tight leading-[1.05]"
+            className="font-heading text-[clamp(2.5rem,6vw+1rem,5.5rem)] font-bold tracking-tight leading-[1.05] text-white"
           >
             {hero.headline}{" "}
             <span className="text-primary">{hero.headlineAccent}</span>
@@ -77,37 +89,23 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-4 text-sm md:text-base text-muted-foreground max-w-xl mx-auto leading-relaxed"
+            className="mt-4 text-sm md:text-base text-white/80 max-w-xl mx-auto leading-relaxed"
           >
             {hero.description}
           </motion.p>
         </motion.div>
 
-        {/* Hero Image Container */}
+        {/* Middle content area with badges and info */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{
-            duration: 0.7,
-            delay: 0.3,
-            ease: [0.25, 0.46, 0.45, 0.94],
+            duration: 0.5,
+            delay: 0.15,
+            ease: EASE_OUT,
           }}
-          className="relative flex-1 min-h-[400px] md:min-h-[500px] mx-auto w-full max-w-6xl"
+          className="relative flex-1 mx-auto w-full max-w-6xl"
         >
-          {/* Rounded image frame with white border */}
-          <div className="relative h-full w-full rounded-3xl md:rounded-[2rem] overflow-hidden border-2 border-white/60 shadow-2xl">
-            <Image
-              src={hero.image}
-              alt="Luxury stay in Ella Town"
-              fill
-              className="object-cover"
-              priority
-            />
-
-            {/* Subtle inner vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-          </div>
-
           {/* Floating Badges */}
           <Badge
             label={hero.badges[0].label}
@@ -127,10 +125,10 @@ export function Hero() {
 
           {/* Map Circle - Bottom Left */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.1, duration: 0.5 }}
-            className="absolute -bottom-4 -left-2 md:bottom-4 md:left-4 z-20 w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-background shadow-xl overflow-hidden bg-muted"
+            transition={{ delay: 1.1, duration: 0.35, ease: EASE_OUT }}
+            className="absolute bottom-4 left-4 z-20 w-20 h-20 md:w-28 md:h-28 rounded-full border-4 border-background shadow-xl overflow-hidden bg-muted"
           >
             <div className="w-full h-full relative">
               <div className="absolute inset-0 bg-[#e8e4d4] flex items-center justify-center">
@@ -144,9 +142,9 @@ export function Hero() {
             <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4">
               {/* Bottom text */}
               <motion.p
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.5 }}
+                transition={{ delay: 0.9, duration: 0.4, ease: EASE_OUT }}
                 className="text-white/90 text-xs md:text-sm max-w-xs md:max-w-sm leading-relaxed text-center md:text-left ml-24 md:ml-32"
               >
                 {hero.bottomText}
@@ -154,9 +152,9 @@ export function Hero() {
 
               {/* Rating */}
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 12 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.0, duration: 0.5 }}
+                transition={{ delay: 1.0, duration: 0.4, ease: EASE_OUT }}
                 className="flex flex-col items-end"
               >
                 <div className="flex items-center gap-1.5">
@@ -175,14 +173,14 @@ export function Hero() {
 
         {/* Booking Bar */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, transform: "translateY(12px)" }}
+          animate={{ opacity: 1, transform: "translateY(0px)" }}
           transition={{
-            delay: 0.8,
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
+            delay: 0.4,
+            duration: 0.45,
+            ease: EASE_OUT,
           }}
-          className="relative z-20 mx-auto w-full max-w-4xl -mt-8 md:-mt-10"
+          className="relative z-20 mx-auto w-full max-w-4xl mt-6"
         >
           <div className="bg-card rounded-2xl shadow-xl border border-border/50 px-4 md:px-6 py-3 md:py-4">
             <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-0 md:divide-x md:divide-border">

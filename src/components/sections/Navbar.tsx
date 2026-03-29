@@ -66,7 +66,7 @@ export function Navbar() {
       >
         <nav
           className={cn(
-            "flex items-center justify-between px-4 py-3 transition-all duration-300",
+            "flex items-center justify-between px-4 py-3 transition-all duration-300 rounded-full",
             "bg-white/95 backdrop-blur-md border border-border/50 shadow-lg shadow-black/5"
           )}
         >
@@ -75,12 +75,11 @@ export function Navbar() {
             <Image
               src={navbar.logo.default}
               alt={navbar.logo.alt}
-              width={150}
-              height={150}
+              width={100}
+              height={100}
               className="w-auto h-8 md:h-12"
             />
           </a>
-
 
           {/* Menu Button */}
           <button
