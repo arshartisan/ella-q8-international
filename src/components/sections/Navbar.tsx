@@ -101,7 +101,7 @@ export function Navbar() {
       </motion.header>
 
       {/* Expandable Full Screen Menu - Slides from Right */}
-      <AnimatePresence>
+      <AnimatePresence mode="sync">
         {isMenuOpen && (
           <>
             {/* Backdrop */}

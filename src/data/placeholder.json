@@ -125,19 +125,27 @@
     ]
   },
   "hero": {
-    "brandName": "Ella Q8",
-    "brandTagline": "International",
-    "description": "Cozy rooms, family hospitality, and local guides for hiking, tea estate tours, and hidden waterfalls. Start your Ella Town getaway now.",
+    "headline": "Find Your Perfect",
+    "headlineAccent": "Stay",
+    "description": "Discover Handpicked Luxury Rooms In Breathtaking Ella Town. Unplug, Unwind, And Reconnect With What Matters Most.",
     "image": "/assets/images/hero.png",
-    "cta": {
-      "label": "View rooms",
-      "href": "#floor"
+    "badges": [
+      { "label": "Self Check-in", "position": "top" },
+      { "label": "Wi-Fi 100 Mbps", "position": "left" },
+      { "label": "Pet Friendly", "position": "right" }
+    ],
+    "rating": {
+      "value": "4.9",
+      "label": "from 2,400+ stays"
     },
-    "conciergeCard": {
-      "avatar": "/assets/images/avatar/1.jpg",
-      "smallText": "Let's help you",
-      "mainText": "Talk to our concierge",
-      "href": "#footer"
+    "bottomText": "Experience The Perfect Blend Of Comfort And Nature, Crafted For Your Ultimate Escape.",
+    "bookingBar": {
+      "rooms": ["Standard Room", "Family Suite", "Deluxe Room"],
+      "defaultRoom": "Standard Room",
+      "cta": {
+        "label": "Book Your Stay",
+        "href": "#footer"
+      }
     }
   },
   "about": {
