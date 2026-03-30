@@ -1,135 +1,212 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { RefreshCw, Building, Award, Users } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import placeholderData from "@/data/placeholder.json";
 
 const { whyUs } = placeholderData;
 
-// Icon mapping
-const iconMap: Record<string, React.ElementType> = {
-  refresh: RefreshCw,
-  building: Building,
-  award: Award,
-  users: Users,
-};
+const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as const;
+
+const avatars = [
+  "/assets/images/avatar/1.jpg",
+  "/assets/images/avatar/2.jpg",
+  "/assets/images/avatar/3.jpg",
+  "/assets/images/avatar/4.jpg",
+  "/assets/images/avatar/5.jpg",
+];
 
 export function WhyUs() {
   return (
-    <section id="why-us" className="relative bg-muted/30 py-20 md:py-28 lg:py-32">
-      <div className="px-6 md:px-12 lg:px-16">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-center mb-12 md:mb-16"
-        >
-          {/* Section Label with Lines */}
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="flex-1 h-px bg-border max-w-[200px]" />
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-primary" />
-              <span className="text-xs text-black/50 tracking-widest uppercase">
+    <section id="why-us" className="bg-background py-16 md:py-24 lg:py-28">
+      <div className="px-4 md:px-8 lg:px-16 max-w-[1400px] mx-auto">
+        {/* Top: Label + Headline + Tagline */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 md:mb-16">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, ease: EASE_OUT }}
+              className="mb-6"
+            >
+              <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase border border-border rounded-full text-muted-foreground">
                 {whyUs.sectionLabel}
               </span>
-            </div>
-            <div className="flex-1 h-px bg-border max-w-[200px]" />
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: EASE_OUT }}
+              className="font-heading text-[clamp(2rem,4vw+0.5rem,3.75rem)] font-normal tracking-tighter leading-[1.1] text-foreground"
+            >
+              {whyUs.headline}
+            </motion.h2>
           </div>
 
-          {/* Headline */}
-          <h2 className="font-body text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter capitalize">
-            {whyUs.headline}
-          </h2>
-        </motion.div>
-
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-[1fr_1fr] gap-2">
-          {/* Left - Featured Card with Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative overflow-hidden min-h-[500px] lg:min-h-[600px]"
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2, ease: EASE_OUT }}
+            className="text-foreground/70 text-base md:text-base italic max-w-sm lg:text-right leading-relaxed tracking-tighter"
           >
-            {/* Background Image */}
-            <Image
-              src={whyUs.featuredCard.image}
-              alt="Luxury hotel service"
-              fill
-              className="object-cover"
-            />
+            {whyUs.tagline}
+          </motion.p>
+        </div>
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        {/* 3-Column Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] gap-4 md:gap-5">
+          {/* Left: Local Expertise with dotted map */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: EASE_OUT }}
+            whileHover={{ scale: 1.02, transition: { type: "spring", duration: 0.4, bounce: 0.15 } }}
+            className="relative flex flex-col justify-between rounded-2xl md:rounded-3xl bg-muted/50 border border-border/50 p-6 md:p-8 min-h-[380px] md:min-h-[460px] overflow-hidden cursor-pointer"
+          >
+            {/* Dotted world map pattern */}
+            <div className="flex-1 flex items-center justify-center opacity-[0.12]">
+              <svg
+                viewBox="0 0 800 400"
+                className="w-full max-w-md"
+                fill="currentColor"
+              >
+                {/* Simplified dot map of Sri Lanka region */}
+                {Array.from({ length: 40 }).map((_, row) =>
+                  Array.from({ length: 80 }).map((_, col) => {
+                    const x = col * 10 + 5;
+                    const y = row * 10 + 5;
+                    // Create a rough world map shape using mathematical regions
+                    const inContinent =
+                      // Americas
+                      (x > 80 && x < 250 && y > 40 && y < 350 && Math.random() > 0.4) ||
+                      // Europe/Africa
+                      (x > 330 && x < 500 && y > 30 && y < 380 && Math.random() > 0.45) ||
+                      // Asia
+                      (x > 480 && x < 720 && y > 40 && y < 300 && Math.random() > 0.4) ||
+                      // Australia
+                      (x > 620 && x < 740 && y > 280 && y < 370 && Math.random() > 0.5);
+                    if (!inContinent) return null;
+                    return (
+                      <circle
+                        key={`${row}-${col}`}
+                        cx={x}
+                        cy={y}
+                        r={2}
+                        opacity={0.6 + Math.random() * 0.4}
+                      />
+                    );
+                  })
+                )}
+                {/* Highlight dot for Sri Lanka */}
+                <circle cx={560} cy={220} r={6} className="text-primary fill-primary" opacity={0.8} />
+                <circle cx={560} cy={220} r={12} className="text-primary fill-primary" opacity={0.2} />
+              </svg>
+            </div>
 
-            {/* Content */}
-            <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-between">
-              {/* Top Content */}
-              <div className="space-y-4">
-                {/* Label */}
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-primary" />
-                  <span className="text-xs uppercase tracking-widest text-white/80">
-                    {whyUs.featuredCard.label}
-                  </span>
-                </div>
-                {/* Headline */}
-                <h3 className="font-body text-3xl md:text-4xl font-medium capitalize text-white leading-tight max-w-md tracking-tighter">
-                  {whyUs.featuredCard.headline}
-                </h3>
-              </div>
-
-              {/* Bottom Description */}
-              <p className="text-white/80 text-sm md:text-base leading-snug tracking-tighter max-w-md">
-                {whyUs.featuredCard.description}
+            {/* Bottom content */}
+            <div className="mt-6 space-y-2">
+              <h3 className="font-heading text-xl md:text-2xl font-medium tracking-tighter text-foreground">
+                {whyUs.localExpertise.title}
+              </h3>
+              <p className="text-foreground/70 text-base leading-relaxed tracking-tighter max-w-sm">
+                {whyUs.localExpertise.description}
               </p>
             </div>
           </motion.div>
 
-          {/* Right - 2x2 Stats Grid */}
-          <div className="grid md:grid-cols-2 gap-3">
-            {whyUs.stats.map((stat, index) => {
-              const Icon = iconMap[stat.icon] || Award;
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.2 + index * 0.1,
-                  }}
-                  className="bg-white p-6 md:p-8 flex flex-col justify-between border border-border/80 min-h-[250px]"
-                >
-                  {/* Top - Value and Icon */}
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <p className="text-3xl md:text-5xl font-semibold text-foreground tracking-tighter">
-                        {stat.value}
-                      </p>
-                      <p className="text-sm text-primary mt-1 uppercase tracking-widest">
-                        {stat.label}
-                      </p>
-                    </div>
-                    <Icon
-                      className="w-5 h-5 text-primary flex-shrink-0"
-                      strokeWidth={1.5}
-                    />
-                  </div>
+          {/* Center: 2 stacked cards */}
+          <div className="flex flex-col gap-4 md:gap-5">
+            {whyUs.cards.map((card, index) => (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.1 + index * 0.1,
+                  ease: EASE_OUT,
+                }}
+                whileHover={{ scale: 1.02, transition: { type: "spring", duration: 0.4, bounce: 0.15 } }}
+                className="flex-1 flex flex-col justify-between rounded-2xl md:rounded-3xl bg-muted/50 border border-border/50 p-6 md:p-8 cursor-pointer"
+              >
+                <h3 className="font-heading text-lg md:text-xl font-medium tracking-tighter text-foreground mb-4">
+                  {card.title}
+                </h3>
 
-                  {/* Bottom - Description */}
-                  <p className="text-sm text-muted-foreground leading-snug tracking-tighter mt-auto">
-                    {stat.description}
-                  </p>
-                </motion.div>
-              );
-            })}
+                {/* Avatar stack for community card */}
+                {card.showAvatars && (
+                  <div className="flex -space-x-2 mb-4">
+                    {avatars.map((avatar, i) => (
+                      <motion.div
+                        key={avatar}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                          duration: 0.3,
+                          delay: 0.4 + i * 0.05,
+                          ease: EASE_OUT,
+                        }}
+                        className="relative w-9 h-9 rounded-full border-2 border-background overflow-hidden"
+                      >
+                        <Image
+                          src={avatar}
+                          alt={`Community member ${i + 1}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
+
+                <p className="text-foreground/70 text-base leading-relaxed tracking-tighter">
+                  {card.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
+
+          {/* Right: Featured image card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2, ease: EASE_OUT }}
+            whileHover={{ scale: 1.02, transition: { type: "spring", duration: 0.4, bounce: 0.15 } }}
+            className="relative rounded-2xl md:rounded-3xl overflow-hidden min-h-[380px] md:min-h-[460px] md:col-span-2 lg:col-span-1 cursor-pointer"
+          >
+            <Image
+              src={whyUs.featuredImage.src}
+              alt="Ella Q8 travel experience"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+            {/* Bottom overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-end justify-between">
+              <p className="text-white/90 text-base md:text-base font-medium italic tracking-tighter max-w-[200px]">
+                {whyUs.featuredImage.caption}
+              </p>
+              <motion.a
+                href="#testimonials"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-foreground text-background shrink-0"
+              >
+                <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5" />
+              </motion.a>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

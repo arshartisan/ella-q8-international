@@ -12,17 +12,28 @@ const { navbar } = placeholderData;
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const lenis = useLenis();
 
-  // Handle scroll for navbar background
+  // Hide on scroll down, show on scroll up
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < 50) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -60,8 +71,8 @@ export function Navbar() {
       {/* Main Navigation Bar - Floating Pill */}
       <motion.header
         initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        animate={{ y: isVisible ? 0 : -100, opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="fixed top-0 left-0 right-0 z-50 px-4 md:px-6 pt-4 max-w-lg mx-auto"
       >
         <nav
