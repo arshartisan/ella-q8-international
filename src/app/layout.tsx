@@ -30,7 +30,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} antialiased`} suppressHydrationWarning={true}>
         <LenisProvider>
           {children}
-          <FloatingBadge />
+          {/* <FloatingBadge /> */}
         </LenisProvider>
       </body>
     </html>
