@@ -42,16 +42,16 @@
         "href": "#about"
       },
       {
-        "name": "Rooms",
-        "href": "#floor"
+        "name": "Accommodation",
+        "href": "#accommodation"
       },
       {
-        "name": "Amenities",
+        "name": "Why Us",
         "href": "#why-us"
       },
       {
         "name": "Destinations",
-        "href": "#cities"
+        "href": "#destinations"
       }
     ],
     "cta": {
@@ -70,24 +70,24 @@
         "href": "#about"
       },
       {
-        "name": "Featured",
+        "name": "Why Us",
         "number": "03",
-        "href": "#featured"
-      },
-      {
-        "name": "Rooms & Suites",
-        "number": "04",
-        "href": "#floor"
-      },
-      {
-        "name": "Why Choose Us",
-        "number": "05",
         "href": "#why-us"
+      },
+      {
+        "name": "Accommodation",
+        "number": "04",
+        "href": "#accommodation"
+      },
+      {
+        "name": "Tours",
+        "number": "05",
+        "href": "#tours"
       },
       {
         "name": "Destinations",
         "number": "06",
-        "href": "#cities"
+        "href": "#destinations"
       },
       {
         "name": "Testimonials",
@@ -100,11 +100,6 @@
         "href": "#footer"
       }
     ],
-    "featured": {
-      "studioName": "Ella Q8 Hotel",
-      "image": "https://placehold.co/600x800/1a1a1a/c9a962?text=Featured",
-      "copyright": "2026 All rights reserved"
-    },
     "contact": {
       "email": "reservations@Ella Q8.com",
       "phone": "+1 (555) 789-0123"
@@ -191,8 +186,8 @@
     },
     "gallery": {
       "images": [
-        "/assets/images/rooms/1.jpg",
-        "/assets/images/rooms/3.jpg",
+        "/assets/images/about.png",
+        "/assets/images/about3.jpg",
         "/assets/images/about2.jpg"
       ],
       "caption": "Stories and moments from travelers who explored Ella's highlands with us."
@@ -509,24 +504,24 @@
           "href": "#hero"
         },
         {
-          "name": "Rooms",
-          "href": "#floor"
+          "name": "About",
+          "href": "#about"
         },
         {
-          "name": "Amenities",
-          "href": "#why-us"
+          "name": "Accommodation",
+          "href": "#accommodation"
+        },
+        {
+          "name": "Tours",
+          "href": "#tours"
         },
         {
           "name": "Destinations",
-          "href": "#cities"
+          "href": "#destinations"
         },
         {
           "name": "Testimonials",
           "href": "#testimonials"
-        },
-        {
-          "name": "Contact",
-          "href": "#footer"
         }
       ]
     },
@@ -534,12 +529,8 @@
       "title": "Pages",
       "links": [
         {
-          "name": "About us",
-          "href": "#about"
-        },
-        {
-          "name": "FAQ",
-          "href": "#faq"
+          "name": "Why Us",
+          "href": "#why-us"
         },
         {
           "name": "Privacy Policy",
@@ -588,7 +579,7 @@
       {
         "id": "tea-waterfall",
         "title": "Tea Estate & Waterfall Tour",
-        "image": "/assets/images/rooms/3.jpg",
+        "image": "/assets/images/tours/tea.jpg",
         "price": "$75",
         "priceUnit": "per person",
         "duration": "4 - 5 hours",
@@ -603,7 +594,7 @@
       {
         "id": "ella-rock",
         "title": "Ella Rock Sunrise Trek",
-        "image": "/assets/images/rooms/5.jpg",
+        "image": "/assets/images/tours/ella.jpg",
         "price": "$85",
         "priceUnit": "per person",
         "duration": "5 - 6 hours",
@@ -618,7 +609,7 @@
       {
         "id": "village-hike",
         "title": "Village Hike Experience",
-        "image": "/assets/images/rooms/4.jpg",
+        "image": "/assets/images/tours/hiking.jpg",
         "price": "$65",
         "priceUnit": "per person",
         "duration": "3 - 4 hours",
@@ -633,7 +624,7 @@
       {
         "id": "nine-arch",
         "title": "Nine Arch Bridge & Train Ride",
-        "image": "/assets/images/about3.jpg",
+        "image": "/assets/images/tours/train.jpg",
         "price": "$55",
         "priceUnit": "per person",
         "duration": "3 - 4 hours",
@@ -658,7 +649,7 @@
         "type": "Hill Country",
         "district": "Badulla",
         "description": "Home base — tea estates, waterfalls, and the famous Nine Arch Bridge nestled in misty highlands.",
-        "image": "/assets/images/places/ella.jpg",
+        "image": "/assets/images/destinations/ella.jpg",
         "mapX": 62,
         "mapY": 68,
         "highlight": true
@@ -669,7 +660,7 @@
         "type": "Landmark",
         "district": "Badulla",
         "description": "An iconic colonial-era railway viaduct surrounded by lush jungle and tea plantations.",
-        "image": "/assets/images/places/nine-arch-bridge.jpg",
+        "image": "/assets/images/destinations/nine.jpg",
         "mapX": 65,
         "mapY": 66
       },
@@ -679,7 +670,7 @@
         "type": "Waterfall",
         "district": "Badulla",
         "description": "One of the widest waterfalls in Sri Lanka, tied to the ancient Ramayana legend.",
-        "image": "/assets/images/places/ravana-falls.jpg",
+        "image": "/assets/images/destinations/ravana.jpg",
         "mapX": 60,
         "mapY": 70
       },
@@ -689,7 +680,7 @@
         "type": "Hiking",
         "district": "Badulla",
         "description": "An easy scenic hike offering 360° views of Ella Gap and surrounding tea country.",
-        "image": "/assets/images/places/little-adams-peak.jpg",
+        "image": "/assets/images/destinations/adma.jpg",
         "mapX": 58,
         "mapY": 67
       },
@@ -699,7 +690,7 @@
         "type": "Wildlife Safari",
         "district": "Hambantota",
         "description": "Sri Lanka's most famous national park — home to leopards, elephants, and coastal lagoons.",
-        "image": "/assets/images/places/yala.jpg",
+        "image": "/assets/images/destinations/yala.jpg",
         "mapX": 68,
         "mapY": 80
       },
@@ -709,7 +700,7 @@
         "type": "Beach",
         "district": "Matara",
         "description": "Golden sand beach famous for whale watching, surfing, and stunning sunsets.",
-        "image": "/assets/images/places/mirissa.jpg",
+        "image": "/assets/images/destinations/mirissa.jpg",
         "mapX": 40,
         "mapY": 90
       },
@@ -719,7 +710,7 @@
         "type": "UNESCO Heritage",
         "district": "Matale",
         "description": "The ancient rock fortress and palace ruins — a UNESCO World Heritage Site rising 200m above the jungle.",
-        "image": "/assets/images/places/sigiriya.jpg",
+        "image": "/assets/images/destinations/sigiriya.jpg",
         "mapX": 52,
         "mapY": 38
       },
@@ -729,7 +720,7 @@
         "type": "Cultural Capital",
         "district": "Kandy",
         "description": "Sacred city housing the Temple of the Tooth Relic, surrounded by hills and a serene lake.",
-        "image": "/assets/images/places/kandy.jpg",
+        "image": "/assets/images/destinations/kandy.jpg",
         "mapX": 46,
         "mapY": 48
       },
@@ -739,19 +730,9 @@
         "type": "Hill Country",
         "district": "Nuwara Eliya",
         "description": "Known as 'Little England' — cool climate, colonial architecture, and the finest tea estates.",
-        "image": "/assets/images/places/nuwara-eliya.jpg",
+        "image": "/assets/images/destinations/nuwara.jpg",
         "mapX": 50,
         "mapY": 60
-      },
-      {
-        "id": "galle",
-        "name": "Galle Fort",
-        "type": "UNESCO Heritage",
-        "district": "Galle",
-        "description": "A historic Dutch colonial fort with cobbled streets, boutiques, and ocean-facing ramparts.",
-        "image": "/assets/images/places/galle-fort.jpg",
-        "mapX": 32,
-        "mapY": 88
       }
     ]
   }
