@@ -130,9 +130,18 @@
     "description": "Discover Handpicked Luxury Rooms In Breathtaking Ella Town. Unplug, Unwind, And Reconnect With What Matters Most.",
     "image": "/assets/images/hero4.png",
     "badges": [
-      { "label": "Self Check-in", "position": "top" },
-      { "label": "Wi-Fi 100 Mbps", "position": "left" },
-      { "label": "Pet Friendly", "position": "right" }
+      {
+        "label": "Self Check-in",
+        "position": "top"
+      },
+      {
+        "label": "Wi-Fi 100 Mbps",
+        "position": "left"
+      },
+      {
+        "label": "Pet Friendly",
+        "position": "right"
+      }
     ],
     "rating": {
       "value": "4.9",
@@ -140,7 +149,11 @@
     },
     "bottomText": "Experience The Perfect Blend Of Comfort And Nature, Crafted For Your Ultimate Escape.",
     "bookingBar": {
-      "rooms": ["Standard Room", "Family Suite", "Deluxe Room"],
+      "rooms": [
+        "Standard Room",
+        "Family Suite",
+        "Deluxe Room"
+      ],
       "defaultRoom": "Standard Room",
       "cta": {
         "label": "Book Your Stay",
@@ -149,43 +162,63 @@
     }
   },
   "about": {
-    "sectionLabel": "About Ella Town",
-    "headline": "Your gateway to authentic living and local adventures",
-    "description": "We offer comfortable rooms and full tourism planning in Ella Town: hikes, waterfalls, tea estate visits, village walks, and culture-rich experiences.",
-    "image": "/assets/images/about3.jpg",
-    "features": [
+    "sectionLabel": "About Ella Q8",
+    "headline": "Since 2019, our team has welcomed hundreds of travelers to Ella's misty peaks, from sunrise hikes to starlit evenings.",
+    "card": {
+      "description": "Explore Ella's highlands with stays and tours designed for every kind of traveler. Each package includes local guides, scenic stops for photos and rest.",
+      "tags": [
+        {
+          "icon": "car",
+          "label": "Pickup Included"
+        },
+        {
+          "icon": "clock",
+          "label": "Half & Full-Day Tours"
+        },
+        {
+          "icon": "mountain",
+          "label": "Mountain Views"
+        }
+      ],
+      "cta": {
+        "label": "Contact Us",
+        "href": "#footer"
+      }
+    },
+    "featuredImage": {
+      "src": "/assets/images/about3.jpg",
+      "title": "Ella Explorer"
+    },
+    "gallery": {
+      "images": [
+        "/assets/images/rooms/1.jpg",
+        "/assets/images/rooms/3.jpg",
+        "/assets/images/about2.jpg"
+      ],
+      "caption": "Stories and moments from travelers who explored Ella's highlands with us."
+    },
+    "stats": [
       {
-        "icon": "building",
-        "title": "Comfortable rooms",
-        "description": "Cozy private and family rooms with local décor, warm service, and in-room essentials for a restful stay in Ella Town."
+        "value": "5",
+        "suffix": "+",
+        "label": "years of experience"
       },
       {
-        "icon": "file-text",
-        "title": "Tourism services",
-        "description": "Guided hiking trails, waterfall trips, tea estate visits, adventure day tours, and cultural experiences arranged by our local team."
+        "value": "760",
+        "suffix": "+",
+        "label": "happy travelers"
+      },
+      {
+        "value": "30",
+        "suffix": "+",
+        "label": "scenic routes"
+      },
+      {
+        "value": "4.9",
+        "suffix": "",
+        "label": "average rating"
       }
-    ],
-    "statsBar": {
-      "label": "At a glance",
-      "headline": "Providing excellence, every step forward",
-      "stats": [
-        {
-          "value": "50",
-          "suffix": "k",
-          "label": "Guests hosted"
-        },
-        {
-          "value": "15",
-          "suffix": "+",
-          "label": "Years excellence"
-        },
-        {
-          "value": "99",
-          "suffix": "%",
-          "label": "Guest satisfaction"
-        }
-      ]
-    }
+    ]
   },
   "featuredPlace": {
     "headline": "Featured Ella Town stays and services",
@@ -243,161 +276,145 @@
       }
     ]
   },
-  "floor": {
-    "sectionLabel": "Floor planning",
-    "headline": "Explore every level with our detailed floor planning",
+  "accommodation": {
+    "sectionLabel": "Our Rooms",
+    "headline": "Experience the perfect blend of comfort and nature, crafted for your ultimate escape.",
+    "categories": [
+      "Standard",
+      "Deluxe",
+      "Family Suite",
+      "Cottage"
+    ],
     "rooms": [
       {
-        "id": "bar",
-        "name": "The Ella Q8 Bar",
-        "description": "The bar is the social heart of the hotel—a sophisticated space designed for craft cocktails, fine spirits, and elegant evenings with live jazz performances.",
-        "image": "/assets/images/floor/bar.jpg",
-        "details": {
-          "rooms": "1",
-          "location": "Ground Floor, Ella Q8 Tower",
-          "designer": "Studio Luxe Interiors",
-          "available": "Premium Spirits, Craft Cocktails, Live Music, VIP Lounge",
-          "size": "200 sqm"
-        }
+        "id": "standard-mountain",
+        "category": "Standard",
+        "title": "Standard Mountain Room",
+        "tagline": "Best option for solo travelers and couples visiting Ella",
+        "rating": 4.5,
+        "price": "$120",
+        "priceNote": "including all taxes",
+        "image": "/assets/images/rooms/room4.jpg",
+        "specs": {
+          "Total Rooms": "1 King + 1",
+          "Bathrooms": "1 Attached",
+          "Internet": "100Mbps",
+          "Covered Parking": "Yes"
+        },
+        "highlights": [
+          {
+            "title": "Cleanliness",
+            "description": "Freshly cleaned daily with premium linens, sanitized surfaces, and mountain-fresh ventilation throughout."
+          },
+          {
+            "title": "Amenities",
+            "description": "Hot water, tea/coffee maker, wardrobe, scenic balcony, and complimentary breakfast included."
+          }
+        ]
       },
       {
-        "id": "cabana",
-        "name": "Private Cabana",
-        "description": "The cabana offers exclusive poolside luxury—a secluded retreat crafted for relaxation, privacy, and personalized service with dedicated attendants.",
-        "image": "/assets/images/floor/cabana.jpg",
-        "details": {
-          "rooms": "1",
-          "location": "Poolside, Garden Level",
-          "designer": "Tropical Design Co.",
-          "available": "Daybed, Mini Bar, Personal Safe, Dedicated Attendant",
-          "size": "50 sqm"
-        }
+        "id": "deluxe-valley",
+        "category": "Deluxe",
+        "title": "Deluxe Valley View Room",
+        "tagline": "Perfect for those seeking comfort with panoramic Ella valley views",
+        "rating": 4.7,
+        "price": "$180",
+        "priceNote": "including all taxes",
+        "image": "/assets/images/rooms/room1.jpg",
+        "specs": {
+          "Total Rooms": "1 King + 2",
+          "Bathrooms": "1 Attached",
+          "Internet": "100Mbps",
+          "Covered Parking": "Yes Two"
+        },
+        "highlights": [
+          {
+            "title": "Cleanliness",
+            "description": "Deep-cleaned with eco-friendly products, fresh towels daily, and air-purified interiors."
+          },
+          {
+            "title": "Amenities",
+            "description": "Mini fridge, rain shower, private balcony with valley view, room service, and breakfast."
+          }
+        ]
       },
       {
-        "id": "deluxe",
-        "name": "Deluxe Room",
-        "description": "The deluxe room is the essence of comfort—a space designed for relaxation, style, and modern living with premium bedding and stunning city views.",
-        "image": "/assets/images/floor/premium.png",
-        "details": {
-          "rooms": "1",
-          "location": "Floors 5-10, Ella Q8 Tower",
-          "designer": "Studio Luxe Interiors",
-          "available": "King Bed, City View, Rain Shower, Mini Bar",
-          "size": "45 sqm"
-        }
+        "id": "family-suite",
+        "category": "Family Suite",
+        "title": "Family Suite",
+        "tagline": "Spacious suite ideal for families exploring Ella together",
+        "rating": 4.8,
+        "price": "$220",
+        "priceNote": "including all taxes",
+        "image": "/assets/images/rooms/room2.jpg",
+        "specs": {
+          "Total Rooms": "2 King + 2",
+          "Bathrooms": "2 Attached",
+          "Internet": "100Mbps",
+          "Covered Parking": "Yes Two"
+        },
+        "highlights": [
+          {
+            "title": "Cleanliness",
+            "description": "Child-safe cleaning standards, hypoallergenic bedding, and daily housekeeping service."
+          },
+          {
+            "title": "Amenities",
+            "description": "Kitchenette, living area, two balconies, laundry service, and guided tour booking desk."
+          }
+        ]
       },
       {
-        "id": "spa",
-        "name": "Luxury Spa",
-        "description": "The spa is a sanctuary of wellness—a tranquil space featuring thermal pools, steam rooms, and world-class treatments for complete rejuvenation and inner peace.",
-        "image": "/assets/images/floor/spa.png",
-        "details": {
-          "rooms": "8",
-          "location": "Level B1, Wellness Wing",
-          "designer": "Zen Wellness Architecture",
-          "available": "Thermal Pools, Steam Room, Treatment Suites, Relaxation Lounge",
-          "size": "400 sqm"
-        }
+        "id": "hillside-cottage",
+        "category": "Cottage",
+        "title": "Hillside Cottage",
+        "tagline": "A private retreat nestled in the hills with garden access",
+        "rating": 4.9,
+        "price": "$300",
+        "priceNote": "including all taxes",
+        "image": "/assets/images/rooms/room3.jpg",
+        "specs": {
+          "Total Rooms": "1 King + 1",
+          "Bathrooms": "1 Attached + Outdoor",
+          "Internet": "100Mbps",
+          "Covered Parking": "Yes"
+        },
+        "highlights": [
+          {
+            "title": "Cleanliness",
+            "description": "Boutique-level care with organic toiletries, fresh flowers, and twice-daily turndown service."
+          },
+          {
+            "title": "Amenities",
+            "description": "Private garden, outdoor shower, hammock, firepit area, and complimentary minibar."
+          }
+        ]
       }
-    ],
-    "cta": {
-      "primary": {
-        "label": "Book A Visit",
-        "href": "#footer"
-      },
-      "secondary": {
-        "label": "Call Us Now",
-        "href": "tel:+15557890123"
-      }
-    }
+    ]
   },
   "whyUs": {
-    "sectionLabel": "Why us",
-    "headline": "Luxury hospitality experts",
-    "featuredCard": {
-      "label": "Award-winning excellence",
-      "headline": "50k+ guests choose our trusted luxury hotels",
-      "description": "Choosing us matters — experience and personalized service shape every memorable stay. We help guests create unforgettable moments with confidence.",
-      "image": "/assets/images/front.png"
+    "sectionLabel": "Why Choose Us",
+    "headline": "Why travelers choose Ella Q8",
+    "tagline": "Every journey we organize is built on trust, safety, and unforgettable views.",
+    "localExpertise": {
+      "title": "Local Expertise",
+      "description": "Guided by people who grew up in Ella and know its hidden paths, stories, and traditions."
     },
-    "stats": [
+    "cards": [
       {
-        "value": "98%",
-        "label": "Satisfaction rate",
-        "icon": "refresh",
-        "description": "Guests consistently rate their experience as exceptional across all our properties."
+        "title": "Certified Local Guides",
+        "description": "Certified by Sri Lanka Tourism Development Authority and international travel associations for safety and highland navigation."
       },
       {
-        "value": "4 in 5",
-        "label": "Return guests",
-        "icon": "building",
-        "description": "More than 80% of our guests return for another stay within two years."
-      },
-      {
-        "value": "50+",
-        "label": "Awards won",
-        "icon": "award",
-        "description": "Recognized globally by leading hospitality and travel publications."
-      },
-      {
-        "value": "95%",
-        "label": "Recommend us",
-        "icon": "users",
-        "description": "Most guests recommend our hotels after experiencing our signature service."
+        "title": "Community & Partnerships",
+        "description": "Working hand in hand with Ella's local community to preserve nature and share its stories with travelers worldwide.",
+        "showAvatars": true
       }
-    ]
-  },
-  "cities": {
-    "sectionLabel": "Locations",
-    "headline": "Featured cities",
-    "description": "Experience the Ella Q8 difference across our collection of prestigious properties in the world's most coveted destinations.",
-    "locations": [
-      {
-        "id": "dubai",
-        "city": "Dubai",
-        "country": "United Arab Emirates",
-        "image": "/assets/images/cities/dubai.jpg",
-        "description": "Rising majestically on the Palm, offering unrivaled views of the Arabian Gulf.",
-        "rooms": 320,
-        "rating": 4.9
-      },
-      {
-        "id": "paris",
-        "city": "Paris",
-        "country": "France",
-        "image": "/assets/images/cities/paris.jpg",
-        "description": "A Haussmanian gem steps from the Champs-Elysees, embodying French elegance.",
-        "rooms": 180,
-        "rating": 4.8
-      },
-      {
-        "id": "new-york",
-        "city": "New York",
-        "country": "United States",
-        "image": "/assets/images/cities/ny.jpg",
-        "description": "An iconic Manhattan landmark overlooking Central Park's lush landscapes.",
-        "rooms": 250,
-        "rating": 4.9
-      },
-      {
-        "id": "tokyo",
-        "city": "Tokyo",
-        "country": "Japan",
-        "image": "/assets/images/cities/tokyo.jpg",
-        "description": "Where traditional Japanese hospitality meets contemporary luxury.",
-        "rooms": 200,
-        "rating": 4.9
-      },
-      {
-        "id": "london",
-        "city": "London",
-        "country": "United Kingdom",
-        "image": "https://placehold.co/600x800/1a1a1a/c9a962?text=London",
-        "description": "A regal residence in Mayfair, steeped in British heritage and sophistication.",
-        "rooms": 220,
-        "rating": 4.8
-      }
-    ]
+    ],
+    "featuredImage": {
+      "src": "/assets/images/about2.jpg",
+      "caption": "See real moments from our trips."
+    }
   },
   "testimonials": {
     "sectionLabel": "Testimonials",
@@ -563,5 +580,179 @@
       }
     ],
     "copyright": "2026 Ella Q8 Hotels & Resorts. All rights reserved."
+  },
+  "tourPackages": {
+    "sectionLabel": "Our Tours",
+    "headline": "Find your perfect Ella experience",
+    "tours": [
+      {
+        "id": "tea-waterfall",
+        "title": "Tea Estate & Waterfall Tour",
+        "image": "/assets/images/rooms/3.jpg",
+        "price": "$75",
+        "priceUnit": "per person",
+        "duration": "4 - 5 hours",
+        "meetingPoint": "Ella Q8 Hotel Lobby",
+        "groupSize": "Up to 8 people",
+        "tourType": "Walking / Tuk-tuk",
+        "schedule": "Morning",
+        "level": "Easy",
+        "languages": "English / Sinhala",
+        "description": "Explore a working tea estate, learn the plucking process, and visit Ravana Falls with a local guide."
+      },
+      {
+        "id": "ella-rock",
+        "title": "Ella Rock Sunrise Trek",
+        "image": "/assets/images/rooms/5.jpg",
+        "price": "$85",
+        "priceUnit": "per person",
+        "duration": "5 - 6 hours",
+        "meetingPoint": "Ella Q8 Hotel Lobby",
+        "groupSize": "Up to 6 people",
+        "tourType": "Hiking",
+        "schedule": "Early Morning",
+        "level": "Moderate",
+        "languages": "English / Sinhala",
+        "description": "Trek through misty trails to Ella Rock for a breathtaking sunrise over the highlands."
+      },
+      {
+        "id": "village-hike",
+        "title": "Village Hike Experience",
+        "image": "/assets/images/rooms/4.jpg",
+        "price": "$65",
+        "priceUnit": "per person",
+        "duration": "3 - 4 hours",
+        "meetingPoint": "Ella Q8 Hotel Lobby",
+        "groupSize": "Up to 10 people",
+        "tourType": "Walking",
+        "schedule": "Afternoon",
+        "level": "Easy",
+        "languages": "English / Sinhala",
+        "description": "Walk hidden village trails and enjoy a traditional lunch alongside a local family."
+      },
+      {
+        "id": "nine-arch",
+        "title": "Nine Arch Bridge & Train Ride",
+        "image": "/assets/images/about3.jpg",
+        "price": "$55",
+        "priceUnit": "per person",
+        "duration": "3 - 4 hours",
+        "meetingPoint": "Ella Train Station",
+        "groupSize": "Up to 8 people",
+        "tourType": "Train / Walking",
+        "schedule": "Morning",
+        "level": "Easy",
+        "languages": "English / Sinhala",
+        "description": "Ride one of the world's most scenic train routes and visit the iconic Nine Arch Bridge."
+      }
+    ]
+  },
+  "destinations": {
+    "sectionLabel": "Destinations",
+    "headline": "Explore Sri Lanka's finest",
+    "tagline": "From Ella's misty peaks to golden coastlines — discover the island's most iconic destinations we can take you to.",
+    "places": [
+      {
+        "id": "ella",
+        "name": "Ella",
+        "type": "Hill Country",
+        "district": "Badulla",
+        "description": "Home base — tea estates, waterfalls, and the famous Nine Arch Bridge nestled in misty highlands.",
+        "image": "/assets/images/places/ella.jpg",
+        "mapX": 62,
+        "mapY": 68,
+        "highlight": true
+      },
+      {
+        "id": "nine-arch",
+        "name": "Nine Arch Bridge",
+        "type": "Landmark",
+        "district": "Badulla",
+        "description": "An iconic colonial-era railway viaduct surrounded by lush jungle and tea plantations.",
+        "image": "/assets/images/places/nine-arch-bridge.jpg",
+        "mapX": 65,
+        "mapY": 66
+      },
+      {
+        "id": "ravana-falls",
+        "name": "Ravana Falls",
+        "type": "Waterfall",
+        "district": "Badulla",
+        "description": "One of the widest waterfalls in Sri Lanka, tied to the ancient Ramayana legend.",
+        "image": "/assets/images/places/ravana-falls.jpg",
+        "mapX": 60,
+        "mapY": 70
+      },
+      {
+        "id": "little-adams-peak",
+        "name": "Little Adam's Peak",
+        "type": "Hiking",
+        "district": "Badulla",
+        "description": "An easy scenic hike offering 360° views of Ella Gap and surrounding tea country.",
+        "image": "/assets/images/places/little-adams-peak.jpg",
+        "mapX": 58,
+        "mapY": 67
+      },
+      {
+        "id": "yala",
+        "name": "Yala National Park",
+        "type": "Wildlife Safari",
+        "district": "Hambantota",
+        "description": "Sri Lanka's most famous national park — home to leopards, elephants, and coastal lagoons.",
+        "image": "/assets/images/places/yala.jpg",
+        "mapX": 68,
+        "mapY": 80
+      },
+      {
+        "id": "mirissa",
+        "name": "Mirissa",
+        "type": "Beach",
+        "district": "Matara",
+        "description": "Golden sand beach famous for whale watching, surfing, and stunning sunsets.",
+        "image": "/assets/images/places/mirissa.jpg",
+        "mapX": 40,
+        "mapY": 90
+      },
+      {
+        "id": "sigiriya",
+        "name": "Sigiriya",
+        "type": "UNESCO Heritage",
+        "district": "Matale",
+        "description": "The ancient rock fortress and palace ruins — a UNESCO World Heritage Site rising 200m above the jungle.",
+        "image": "/assets/images/places/sigiriya.jpg",
+        "mapX": 52,
+        "mapY": 38
+      },
+      {
+        "id": "kandy",
+        "name": "Kandy",
+        "type": "Cultural Capital",
+        "district": "Kandy",
+        "description": "Sacred city housing the Temple of the Tooth Relic, surrounded by hills and a serene lake.",
+        "image": "/assets/images/places/kandy.jpg",
+        "mapX": 46,
+        "mapY": 48
+      },
+      {
+        "id": "nuwara-eliya",
+        "name": "Nuwara Eliya",
+        "type": "Hill Country",
+        "district": "Nuwara Eliya",
+        "description": "Known as 'Little England' — cool climate, colonial architecture, and the finest tea estates.",
+        "image": "/assets/images/places/nuwara-eliya.jpg",
+        "mapX": 50,
+        "mapY": 60
+      },
+      {
+        "id": "galle",
+        "name": "Galle Fort",
+        "type": "UNESCO Heritage",
+        "district": "Galle",
+        "description": "A historic Dutch colonial fort with cobbled streets, boutiques, and ocean-facing ramparts.",
+        "image": "/assets/images/places/galle-fort.jpg",
+        "mapX": 32,
+        "mapY": 88
+      }
+    ]
   }
 }
