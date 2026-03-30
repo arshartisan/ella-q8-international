@@ -9,6 +9,8 @@ import placeholderData from "@/data/placeholder.json";
 
 const { testimonials } = placeholderData;
 
+const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as const;
+
 export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -26,7 +28,7 @@ export function Testimonials() {
 
   const visibleTestimonials = testimonials.items.slice(
     currentIndex,
-    currentIndex + visibleCount
+    currentIndex + visibleCount,
   );
 
   return (
@@ -34,7 +36,7 @@ export function Testimonials() {
       id="testimonials"
       className="relative bg-muted/90 py-20 md:py-28 lg:py-32"
     >
-      <div className="px-6 md:px-12 lg:px-16">
+      <div className="px-6 md:px-12 lg:px-16 max-w-[1400px] mx-auto">
         {/* Main Grid - 3 columns */}
         <div className="grid lg:grid-cols-[1fr_1.2fr_1.2fr] gap-4">
           {/* Left Column - Header */}
@@ -47,15 +49,21 @@ export function Testimonials() {
           >
             <div>
               {/* Section Label */}
-              <div className="flex items-center gap-2 mb-6">
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-xs text-black/50 tracking-widest uppercase">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, ease: EASE_OUT }}
+                className="mb-4"
+              >
+                <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase border border-border rounded-full text-muted-foreground">
+                  <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2" />
                   {testimonials.sectionLabel}
                 </span>
-              </div>
+              </motion.div>
 
               {/* Headline */}
-              <h2 className="font-body text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter capitalize">
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter capitalize">
                 {testimonials.headline}
               </h2>
             </div>
@@ -66,10 +74,10 @@ export function Testimonials() {
                 onClick={handlePrev}
                 disabled={currentIndex === 0}
                 className={cn(
-                  "w-12 h-12 rounded-ull cursor-pointer border border-border flex items-center justify-center transition-all duration-200",
+                  "w-12 h-12 rounded-xl cursor-pointer border border-border flex items-center justify-center transition-all duration-200",
                   currentIndex === 0
                     ? "text-muted-foreground/40 cursor-not-allowed"
-                    : "text-foreground hover:bg-primary hover:text-background"
+                    : "text-foreground hover:bg-primary hover:text-background",
                 )}
                 aria-label="Previous testimonials"
               >
@@ -79,10 +87,10 @@ export function Testimonials() {
                 onClick={handleNext}
                 disabled={currentIndex >= maxIndex}
                 className={cn(
-                  "w-12 h-12 rounded-ull cursor-pointer border border-border flex items-center justify-center transition-all duration-200",
+                  "w-12 h-12 rounded-xl cursor-pointer border border-border flex items-center justify-center transition-all duration-200",
                   currentIndex >= maxIndex
                     ? "text-muted-foreground/40 cursor-not-allowed"
-                    : "text-foreground hover:bg-primary hover:text-background"
+                    : "text-foreground hover:bg-primary hover:text-background",
                 )}
                 aria-label="Next testimonials"
               >
@@ -104,7 +112,7 @@ export function Testimonials() {
                   delay: index * 0.1,
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
-                className="bg-background rounded-2l p-6 border border-border/30 flex flex-col justify-between min-h-[450px]"
+                className="bg-background rounded-4xl p-6 border border-border/30 flex flex-col justify-between min-h-[450px]"
               >
                 {/* Quote Mark */}
                 <div className="mb-6">
@@ -131,7 +139,7 @@ export function Testimonials() {
                 {/* Author Info */}
                 <div className="flex items-center gap-4 mt-8 pt-6 border-t border-border/30">
                   {/* Avatar */}
-                  <div className="relative w-16 h-16 rounded-g overflow-hidden flex-shrink-0">
+                  <div className="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
                     <Image
                       src={testimonial.avatar}
                       alt={testimonial.name}

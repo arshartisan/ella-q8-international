@@ -39,38 +39,44 @@ export function TourPackages() {
   const tours = tourPackages.tours as Tour[];
   const totalSlides = tours.length;
 
-  const smoothScrollTo = useCallback((container: HTMLElement, targetLeft: number) => {
-    const start = container.scrollLeft;
-    const distance = targetLeft - start;
-    const duration = 500;
-    let startTime: number | null = null;
+  const smoothScrollTo = useCallback(
+    (container: HTMLElement, targetLeft: number) => {
+      const start = container.scrollLeft;
+      const distance = targetLeft - start;
+      const duration = 500;
+      let startTime: number | null = null;
 
-    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+      const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = easeOutCubic(progress);
+      const step = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutCubic(progress);
 
-      container.scrollLeft = start + distance * eased;
+        container.scrollLeft = start + distance * eased;
 
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    };
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
 
-    requestAnimationFrame(step);
-  }, []);
+      requestAnimationFrame(step);
+    },
+    [],
+  );
 
-  const scrollToIndex = useCallback((index: number) => {
-    const container = scrollRef.current;
-    if (!container) return;
-    const card = container.children[index] as HTMLElement;
-    if (!card) return;
-    const targetLeft = card.offsetLeft - container.offsetLeft;
-    smoothScrollTo(container, targetLeft);
-  }, [smoothScrollTo]);
+  const scrollToIndex = useCallback(
+    (index: number) => {
+      const container = scrollRef.current;
+      if (!container) return;
+      const card = container.children[index] as HTMLElement;
+      if (!card) return;
+      const targetLeft = card.offsetLeft - container.offsetLeft;
+      smoothScrollTo(container, targetLeft);
+    },
+    [smoothScrollTo],
+  );
 
   const handlePrev = () => {
     const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
@@ -101,7 +107,7 @@ export function TourPackages() {
 
         children.forEach((child, i) => {
           const dist = Math.abs(
-            child.offsetLeft - container.offsetLeft - scrollLeft
+            child.offsetLeft - container.offsetLeft - scrollLeft,
           );
           if (dist < closestDist) {
             closestDist = dist;
@@ -126,6 +132,7 @@ export function TourPackages() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
           <div>
+            {/* Section Label */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -134,6 +141,7 @@ export function TourPackages() {
               className="mb-4"
             >
               <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase border border-border rounded-full text-muted-foreground">
+                <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2" />
                 {tourPackages.sectionLabel}
               </span>
             </motion.div>
@@ -186,9 +194,9 @@ export function TourPackages() {
         >
           <div className="relative">
             {/* Left fade */}
-            <div className="hidden md:block absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            {/* <div className="hidden md:block absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" /> */}
             {/* Right fade */}
-            <div className="hidden md:block absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            {/* <div className="hidden md:block absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" /> */}
 
             <div
               ref={scrollRef}
@@ -248,8 +256,7 @@ export function TourPackages() {
 
 function TourCard({ tour }: { tour: Tour }) {
   return (
-    <motion.div
-      className="w-[85vw] md:w-[calc(45%-0.625rem)] lg:w-[calc(42%-0.625rem)] shrink-0 snap-start group flex flex-col rounded-2xl md:rounded-3xl overflow-hidden border border-border/40 shadow-sm cursor-pointer">
+    <motion.div className="w-[90vw] md:w-[calc(45%-0.625rem)] lg:w-[calc(42%-0.625rem)] shrink-0 snap-start group flex flex-col rounded-2xl md:rounded-3xl overflow-hidden border border-border/40 shadow-sm cursor-pointer">
       {/* Image */}
       <div className="relative aspect-[16/10] md:aspect-[16/7] overflow-hidden">
         <Image
@@ -290,17 +297,26 @@ function TourCard({ tour }: { tour: Tour }) {
         {/* Quick info */}
         <div className="space-y-3 mb-5 tracking-tighter">
           <div className="flex items-center gap-3 text-base text-foreground">
-            <Clock className="w-4 h-4 text-muted-foreground shrink-0" strokeWidth={1.5} />
+            <Clock
+              className="w-4 h-4 text-muted-foreground shrink-0"
+              strokeWidth={1.5}
+            />
             <span className="text-muted-foreground">Duration:</span>
             <span className="font-medium ml-auto">{tour.duration}</span>
           </div>
           <div className="flex items-center gap-3 text-base text-foreground">
-            <MapPin className="w-4 h-4 text-muted-foreground shrink-0" strokeWidth={1.5} />
+            <MapPin
+              className="w-4 h-4 text-muted-foreground shrink-0"
+              strokeWidth={1.5}
+            />
             <span className="text-muted-foreground">Meeting point:</span>
             <span className="font-medium ml-auto">{tour.meetingPoint}</span>
           </div>
           <div className="flex items-center gap-3 text-base text-foreground">
-            <Users className="w-4 h-4 text-muted-foreground shrink-0" strokeWidth={1.5} />
+            <Users
+              className="w-4 h-4 text-muted-foreground shrink-0"
+              strokeWidth={1.5}
+            />
             <span className="text-muted-foreground">Group Size:</span>
             <span className="font-medium ml-auto">{tour.groupSize}</span>
           </div>
@@ -309,25 +325,41 @@ function TourCard({ tour }: { tour: Tour }) {
         {/* Specs grid */}
         <div className="grid grid-cols-2 gap-x-6 gap-y-4 mb-6 pt-5 border-t border-border/40">
           <div>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">Tour Type</p>
-            <p className="text-base font-medium text-foreground">{tour.tourType}</p>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">
+              Tour Type
+            </p>
+            <p className="text-base font-medium text-foreground">
+              {tour.tourType}
+            </p>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">Schedule</p>
-            <p className="text-base font-medium text-foreground">{tour.schedule}</p>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">
+              Schedule
+            </p>
+            <p className="text-base font-medium text-foreground">
+              {tour.schedule}
+            </p>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">Level / Difficulty</p>
-            <p className="text-base font-medium text-foreground">{tour.level}</p>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">
+              Level / Difficulty
+            </p>
+            <p className="text-base font-medium text-foreground">
+              {tour.level}
+            </p>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">Languages</p>
-            <p className="text-base font-medium text-foreground">{tour.languages}</p>
+            <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">
+              Languages
+            </p>
+            <p className="text-base font-medium text-foreground">
+              {tour.languages}
+            </p>
           </div>
         </div>
 
         {/* Price + CTA */}
-        <div className="pt-5 border-t border-border/40 flex items-center justify-between">
+        <div className="pt-5 border-t border-border/40 flex flex-col md:flex-row md:items-center md:justify-between">
           <p className="text-2xl md:text-3xl font-semibold tracking-tighter text-foreground mb-4">
             {tour.price}
             <span className="text-base md:text-base font-normal text-muted-foreground">

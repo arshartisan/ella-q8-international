@@ -2,7 +2,17 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Sparkles, ShieldCheck, ArrowUpRight, BedDouble, Bath, Wifi, CarFront, type LucideIcon } from "lucide-react";
+import {
+  Star,
+  Sparkles,
+  ShieldCheck,
+  ArrowUpRight,
+  BedDouble,
+  Bath,
+  Wifi,
+  CarFront,
+  type LucideIcon,
+} from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import placeholderData from "@/data/placeholder.json";
@@ -13,34 +23,39 @@ const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as const;
 
 const specIcons: Record<string, LucideIcon> = {
   "Total Rooms": BedDouble,
-  "Bathrooms": Bath,
-  "Internet": Wifi,
+  Bathrooms: Bath,
+  Internet: Wifi,
   "Covered Parking": CarFront,
 };
 
 export function Accommodation() {
   const [activeCategory, setActiveCategory] = useState(
-    accommodation.categories[0]
+    accommodation.categories[0],
   );
 
   const filteredRooms = accommodation.rooms.filter(
-    (room) => room.category === activeCategory
+    (room) => room.category === activeCategory,
   );
 
   return (
-    <section id="accommodation" className="bg-background py-16 md:py-24 lg:py-28">
+    <section
+      id="accommodation"
+      className="bg-background py-16 md:py-24 lg:py-28"
+    >
       <div className="px-4 md:px-8 lg:px-16 max-w-[1400px] mx-auto">
         {/* Top: Label + Headline + Tagline */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 md:mb-16">
           <div>
+            {/* Section Label */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, ease: EASE_OUT }}
-              className="mb-6"
+              className="mb-4"
             >
               <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase border border-border rounded-full text-muted-foreground">
+                <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2" />
                 {accommodation.sectionLabel}
               </span>
             </motion.div>
@@ -56,7 +71,6 @@ export function Accommodation() {
             </motion.h2>
           </div>
         </div>
-
 
         {/* Category Tabs */}
         <motion.div
@@ -75,7 +89,7 @@ export function Accommodation() {
                   "relative flex-1 py-3 text-sm md:text-lg tracking-tighter transition-colors duration-200 cursor-pointer whitespace-nowrap text-center z-10",
                   activeCategory === category
                     ? "text-foreground font-medium"
-                    : "text-muted-foreground font-normal hover:text-foreground/70"
+                    : "text-muted-foreground font-normal hover:text-foreground/70",
                 )}
               >
                 {activeCategory === category && (
@@ -132,7 +146,7 @@ function RoomCard({ room }: { room: RoomData }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 bg-background border border-border/60 rounded-2xl md:rounded-3xl overflow-hidden">
       {/* Col 1: Image */}
-      <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[350px] overflow-hidden bg-muted">
+      <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[380px] overflow-hidden bg-muted">
         <Image
           src={room.image}
           alt={room.title}
@@ -142,9 +156,7 @@ function RoomCard({ room }: { room: RoomData }) {
         {/* Rating badge */}
         <div className="absolute top-3 left-3 flex items-center gap-1 px-2.5 py-1 bg-foreground/80 backdrop-blur-sm rounded-full">
           <Star className="w-3 h-3 fill-primary text-primary" />
-          <span className="text-xs font-medium text-white">
-            {room.rating}
-          </span>
+          <span className="text-xs font-medium text-white">{room.rating}</span>
         </div>
       </div>
 
@@ -156,7 +168,7 @@ function RoomCard({ room }: { room: RoomData }) {
         <h3 className="font-heading text-base md:text-2xl font-medium tracking-tight text-foreground mb-2 leading-snug">
           {room.tagline}
         </h3>
-        <button className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground transition-colors mt-auto cursor-pointer tracking-tighter">
+        <button className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors mt-auto cursor-pointer tracking-tighter">
           Meet the Host
           <ArrowUpRight className="w-3 h-3" />
         </button>
@@ -172,7 +184,7 @@ function RoomCard({ room }: { room: RoomData }) {
               /night
             </span>
           </p>
-          <p className="text-xs text-muted-foreground mt-0.5 tracking-tighter">
+          <p className="text-sm text-muted-foreground mt-0.5 tracking-tighter">
             {room.priceNote}
           </p>
         </div>
@@ -186,10 +198,19 @@ function RoomCard({ room }: { room: RoomData }) {
             {Object.entries(room.specs).map(([key, value]) => (
               <div
                 key={key}
-                className="flex items-center justify-between text-sm"
+                className="flex items-center justify-between text-base"
               >
                 <span className="text-muted-foreground tracking-tighter flex items-center gap-1.5">
-                  {specIcons[key] && (() => { const Icon = specIcons[key]; return <Icon className="w-3.5 h-3.5 text-muted-foreground/70" strokeWidth={1.5} />; })()}
+                  {specIcons[key] &&
+                    (() => {
+                      const Icon = specIcons[key];
+                      return (
+                        <Icon
+                          className="w-3.5 h-3.5 text-muted-foreground/70"
+                          strokeWidth={1.5}
+                        />
+                      );
+                    })()}
                   {key}
                 </span>
                 <span className="font-medium text-foreground tracking-tight">
@@ -203,7 +224,7 @@ function RoomCard({ room }: { room: RoomData }) {
 
       {/* Col 4: Highlights + CTA */}
       <div className="p-5 border-t lg:border-t-0 lg:border-l border-border/60 flex flex-col justify-between">
-        <div className="space-y-8">
+        <div className="hidden md:block space-y-8">
           {room.highlights.map((highlight, i) => (
             <div key={highlight.title}>
               <div className="flex items-center gap-2 mb-1">
@@ -218,11 +239,11 @@ function RoomCard({ room }: { room: RoomData }) {
                     strokeWidth={1.5}
                   />
                 )}
-                <h4 className="text-base font-semibold text-foreground tracking-tight">
+                <h4 className="text-lg font-semibold text-foreground tracking-tight">
                   {highlight.title}
                 </h4>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed tracking-tighter">
+              <p className="text-base text-muted-foreground leading-relaxed tracking-tighter">
                 {highlight.description}
               </p>
             </div>

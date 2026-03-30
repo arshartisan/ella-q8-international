@@ -55,7 +55,7 @@ function Badge({
         duration: 0.35,
         ease: EASE_OUT,
       }}
-      className={`absolute items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-foreground/80 backdrop-blur-md text-white text-[10px] sm:text-xs font-medium shadow-lg ${className}`}
+      className={`absolute items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-foreground/80 backdrop-blur-md text-white text-[10px] sm:text-sm tracking-tighter font-medium shadow-lg ${className}`}
     >
       <span className="w-2 h-2 rounded-full bg-primary" />
       {label}
@@ -76,7 +76,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden "
+      className="relative min-h-dvh w-full overflow-hidden "
       style={{
         backgroundImage: `url(${hero.image})`,
         backgroundSize: "cover",
@@ -86,14 +86,14 @@ export function Hero() {
       }}
     >
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/20" />
+      <div className="absolute inset-0 bg-black/30" />
       {/* Bottom gradient for smooth transition to next section */}
       {/* <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" /> */}
 
       {/* Inset rounded border frame */}
-      <div className="absolute inset-2 sm:inset-3 md:inset-5 lg:inset-12 rounded-2xl sm:rounded-3xl md:rounded-[2rem] border-2 sm:border-3 border-white/40 z-10 pointer-events-none" />
+      {/* <div className="absolute inset-2 sm:inset-3 md:inset-5 lg:inset-12 rounded-2xl sm:rounded-3xl md:rounded-[2rem] border-2 sm:border-3 border-white/40 z-10 pointer-events-none" /> */}
 
-      <div className="relative z-10 flex flex-col justify-between min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 pt-24 sm:pt-28 md:pt-32 pb-4 sm:pb-6">
+      <div className="relative z-10 flex flex-col justify-between min-h-screen px-4 sm:px-6 md:px-8 lg:px-12 pt-28 sm:pt-28 md:pt-32 pb-4 sm:pb-6">
         {/* Headline */}
         <motion.div
           variants={container}
@@ -103,7 +103,7 @@ export function Hero() {
         >
           <motion.h1
             variants={item}
-            className="font-heading text-[clamp(1.75rem,5vw+0.5rem,3.5rem)] sm:text-[clamp(2rem,5vw+0.75rem,3.5rem)] lg:text-[clamp(2.5rem,6vw+1rem,3.5rem)] font-semibold tracking-tighter leading-[1.05] text-white"
+            className="font-heading text-[2.2rem] sm:text-[clamp(2rem,5vw+0.75rem,5.5rem)] lg:text-[clamp(2.5rem,6vw+1rem,5rem)] font-semibold tracking-tighter leading-[1.05] text-white"
           >
             {hero.headline}{" "}
             <span className="text-white">{hero.headlineAccent}</span>
@@ -111,7 +111,7 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base text-white/80 max-w-xs sm:max-w-md md:max-w-xl mx-auto leading-relaxed"
+            className="mt-3 sm:mt-4 text-sm md:text-lg text-white/80 max-w-xs sm:max-w-md md:max-w-xl mx-auto leading-relaxed tracking-tighter"
           >
             {hero.description}
           </motion.p>
@@ -205,7 +205,7 @@ export function Hero() {
           className="relative z-20 mx-auto w-full max-w-4xl mt-4 sm:mt-6"
         >
           <div className="bg-card rounded-2xl lg:rounded-full shadow-xl border border-border/50 p-3 lg:p-2.5">
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:flex lg:flex-row items-stretch lg:items-center gap-1 lg:gap-0 lg:divide-x lg:divide-border">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row items-stretch lg:items-center gap-1 lg:gap-0 lg:divide-x lg:divide-border">
               {/* Room Selector */}
               <Select value={room} onValueChange={setRoom}>
                 <SelectTrigger className="flex items-center gap-3 w-full lg:flex-1 px-2 lg:pr-4 py-2 lg:py-0 border-0 shadow-none bg-transparent h-auto rounded-none focus:ring-0 focus-visible:ring-0 cursor-pointer [&>svg:last-child]:hidden">
@@ -402,7 +402,7 @@ export function Hero() {
                     stiffness: 400,
                     damping: 17,
                   }}
-                  className="flex items-center justify-center w-full lg:w-auto px-6 py-3 bg-primary text-primary-foreground text-xs font-semibold tracking-tighter rounded-full hover:bg-primary/90 transition-colors whitespace-nowrap"
+                  className="flex items-center justify-center w-full lg:w-auto px-6 py-3 bg-primary text-primary-foreground text-base font-semibold tracking-tighter rounded-full hover:bg-primary/90 transition-colors whitespace-nowrap"
                 >
                   {hero.bookingBar.cta.label}
                 </motion.a>

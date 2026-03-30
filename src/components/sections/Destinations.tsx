@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -59,6 +59,24 @@ export function Destinations() {
     }
   };
 
+  // Responsive map size
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+  const [mapSize, setMapSize] = useState(300);
+
+  useEffect(() => {
+    const container = mapContainerRef.current;
+    if (!container) return;
+
+    const observer = new ResizeObserver((entries) => {
+      const width = entries[0].contentRect.width;
+      // Map should fit within the container with padding
+      setMapSize(Math.min(Math.floor(width - 48), 360));
+    });
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="destinations"
@@ -76,6 +94,7 @@ export function Destinations() {
               className="mb-4"
             >
               <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase border border-border rounded-full text-muted-foreground">
+              <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2" />
                 {destinations.sectionLabel}
               </span>
             </motion.div>
@@ -85,7 +104,7 @@ export function Destinations() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1, ease: EASE_OUT }}
-              className="font-heading text-[clamp(2rem,4vw+0.5rem,3.75rem)] font-normal tracking-tight leading-[1.1] text-foreground"
+              className="font-heading text-[clamp(2rem,4vw+0.5rem,3.75rem)] font-normal tracking-tighters leading-[1.1] text-foreground"
             >
               {destinations.headline}
             </motion.h2>
@@ -96,7 +115,7 @@ export function Destinations() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2, ease: EASE_OUT }}
-            className="text-foreground/70 text-sm md:text-base max-w-md lg:text-right leading-relaxed tracking-tight"
+            className="text-foreground/70 text-sm md:text-base max-w-md lg:text-right leading-relaxed tracking-tighter"
           >
             {destinations.tagline}
           </motion.p>
@@ -111,11 +130,14 @@ export function Destinations() {
           className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 md:gap-8"
         >
           {/* Map */}
-          <div className="relative rounded-2xl md:rounded-3xl bg-muted/40 border border-border/50 p-6 md:p-8 flex items-center justify-center min-h-[400px] md:min-h-[520px]">
-            <div className="relative w-full max-w-[320px] md:max-w-[360px]">
+          <div
+            ref={mapContainerRef}
+            className="relative rounded-2xl md:rounded-3xl bg-muted/40 border border-border/50 p-4 sm:p-6 md:p-8 flex items-center justify-center min-h-[320px] sm:min-h-[400px] md:min-h-[520px]"
+          >
+            <div className="relative w-full" style={{ maxWidth: mapSize }}>
               <SrilankaMap
                 type="select-single"
-                size={360}
+                size={mapSize}
                 mapColor="#e8e5e0"
                 strokeColor="#c4c0b8"
                 strokeWidth={1}
@@ -159,14 +181,14 @@ export function Destinations() {
                         stiffness: 400,
                         damping: 20,
                       }}
-                      className={`relative flex items-center justify-center w-6 h-6 rounded-full border-2 transition-colors ${
+                      className={`relative flex items-center justify-center w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 transition-colors ${
                         isActive
                           ? "bg-foreground border-foreground scale-100"
                           : "bg-background border-foreground/40 group-hover/marker:border-foreground/70"
                       }`}
                     >
                       <span
-                        className={`block w-2 h-2 rounded-full transition-colors ${
+                        className={`block w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-colors ${
                           isActive
                             ? "bg-background"
                             : "bg-foreground/40 group-hover/marker:bg-foreground/70"
@@ -207,7 +229,7 @@ export function Destinations() {
                 className="rounded-2xl md:rounded-3xl bg-foreground text-background overflow-hidden mb-4 md:mb-5"
               >
                 {/* Image */}
-                <div className="relative h-40 md:h-48 w-full overflow-hidden">
+                <div className="relative h-40 md:h-64 w-full overflow-hidden">
                   <Image
                     src={activePlace.image}
                     alt={activePlace.name}
@@ -232,14 +254,14 @@ export function Destinations() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 md:p-8 -mt-10 relative">
+                <div className="p-4 sm:p-6 md:p-8 -mt-8 sm:-mt-10 relative">
                   <span className="text-[10px] font-medium tracking-[0.15em] uppercase text-background/50">
                     {activePlace.type}
                   </span>
-                  <h3 className="font-heading text-xl md:text-2xl font-medium tracking-tight mt-1 mb-3">
+                  <h3 className="font-heading text-lg sm:text-xl md:text-4xl font-medium tracking-tighter mt-1 mb-2 sm:mb-3">
                     {activePlace.name}
                   </h3>
-                  <p className="text-background/70 text-sm leading-relaxed tracking-tight max-w-sm">
+                  <p className="text-background/70 text-sm sm:text-base leading-relaxed tracking-tighter max-w-sm">
                     {activePlace.description}
                   </p>
                 </div>
@@ -247,7 +269,7 @@ export function Destinations() {
             </AnimatePresence>
 
             {/* Place List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 sm:gap-2 md:gap-4">
               {places.map((place, i) => {
                 const isActive = place.id === activePlace.id;
                 return (
@@ -262,14 +284,14 @@ export function Destinations() {
                       delay: i * 0.05,
                       ease: EASE_OUT,
                     }}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl text-left transition-colors cursor-pointer ${
+                    className={`flex items-center gap-2 sm:gap-3 px-2.5 sm:px-4 py-2.5 sm:py-3 rounded-xl text-left transition-colors cursor-pointer ${
                       isActive
                         ? "bg-muted/70 border border-border/60"
                         : "hover:bg-muted/40 border border-transparent"
                     }`}
                   >
                     <MapPin
-                      className={`w-4 h-4 shrink-0 ${
+                      className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 ${
                         isActive
                           ? "text-foreground"
                           : "text-muted-foreground"
@@ -278,7 +300,7 @@ export function Destinations() {
                     />
                     <div className="min-w-0">
                       <p
-                        className={`text-sm font-medium tracking-tight truncate ${
+                        className={`text-sm sm:text-base font-medium tracking-tighter truncate ${
                           isActive
                             ? "text-foreground"
                             : "text-foreground/80"
@@ -286,7 +308,7 @@ export function Destinations() {
                       >
                         {place.name}
                       </p>
-                      <p className="text-[11px] text-muted-foreground truncate">
+                      <p className="text-[11px] sm:text-[12px] text-muted-foreground truncate">
                         {place.type}
                       </p>
                     </div>

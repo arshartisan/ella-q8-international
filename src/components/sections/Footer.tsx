@@ -199,7 +199,7 @@ export function Footer() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative overflow-hidden"
           >
-            <h2
+            {/* <h2
               className="font-heading text-[80px] sm:text-[120px] md:text-[160px] lg:text-[200px] xl:text-[340px] font-normal text-center leading-none tracking-tighter select-none"
               style={{
                 background: "linear-gradient(to bottom, rgba(255,255,255,0.45) 0%, rgba(26,26,26, 1) 90%)",
@@ -209,7 +209,7 @@ export function Footer() {
               }}
             >
               {footer.brand.name}
-            </h2>
+            </h2> */}
           </motion.div>
         </div>
       </section>

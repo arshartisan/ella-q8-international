@@ -9,6 +9,12 @@ const { whyUs } = placeholderData;
 
 const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as const;
 
+// Deterministic pseudo-random to avoid hydration mismatch
+function seededRandom(seed: number) {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 const avatars = [
   "/assets/images/avatar/1.jpg",
   "/assets/images/avatar/2.jpg",
@@ -24,14 +30,16 @@ export function WhyUs() {
         {/* Top: Label + Headline + Tagline */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 md:mb-16">
           <div>
+            {/* Section Label */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, ease: EASE_OUT }}
-              className="mb-6"
+              className="mb-4"
             >
               <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase border border-border rounded-full text-muted-foreground">
+                <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2" />
                 {whyUs.sectionLabel}
               </span>
             </motion.div>
@@ -66,7 +74,10 @@ export function WhyUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, ease: EASE_OUT }}
-            whileHover={{ scale: 1.02, transition: { type: "spring", duration: 0.4, bounce: 0.15 } }}
+            whileHover={{
+              scale: 1.02,
+              transition: { type: "spring", duration: 0.4, bounce: 0.15 },
+            }}
             className="relative flex flex-col justify-between rounded-2xl md:rounded-3xl bg-muted/50 border border-border/50 p-6 md:p-8 min-h-[380px] md:min-h-[460px] overflow-hidden cursor-pointer"
           >
             {/* Dotted world map pattern */}
@@ -81,16 +92,33 @@ export function WhyUs() {
                   Array.from({ length: 80 }).map((_, col) => {
                     const x = col * 10 + 5;
                     const y = row * 10 + 5;
+                    const seed = row * 80 + col;
                     // Create a rough world map shape using mathematical regions
                     const inContinent =
                       // Americas
-                      (x > 80 && x < 250 && y > 40 && y < 350 && Math.random() > 0.4) ||
+                      (x > 80 &&
+                        x < 250 &&
+                        y > 40 &&
+                        y < 350 &&
+                        seededRandom(seed) > 0.4) ||
                       // Europe/Africa
-                      (x > 330 && x < 500 && y > 30 && y < 380 && Math.random() > 0.45) ||
+                      (x > 330 &&
+                        x < 500 &&
+                        y > 30 &&
+                        y < 380 &&
+                        seededRandom(seed + 3200) > 0.45) ||
                       // Asia
-                      (x > 480 && x < 720 && y > 40 && y < 300 && Math.random() > 0.4) ||
+                      (x > 480 &&
+                        x < 720 &&
+                        y > 40 &&
+                        y < 300 &&
+                        seededRandom(seed + 6400) > 0.4) ||
                       // Australia
-                      (x > 620 && x < 740 && y > 280 && y < 370 && Math.random() > 0.5);
+                      (x > 620 &&
+                        x < 740 &&
+                        y > 280 &&
+                        y < 370 &&
+                        seededRandom(seed + 9600) > 0.5);
                     if (!inContinent) return null;
                     return (
                       <circle
@@ -98,14 +126,26 @@ export function WhyUs() {
                         cx={x}
                         cy={y}
                         r={2}
-                        opacity={0.6 + Math.random() * 0.4}
+                        opacity={0.6 + seededRandom(seed + 12800) * 0.4}
                       />
                     );
-                  })
+                  }),
                 )}
                 {/* Highlight dot for Sri Lanka */}
-                <circle cx={560} cy={220} r={6} className="text-primary fill-primary" opacity={0.8} />
-                <circle cx={560} cy={220} r={12} className="text-primary fill-primary" opacity={0.2} />
+                <circle
+                  cx={560}
+                  cy={220}
+                  r={6}
+                  className="text-primary fill-primary"
+                  opacity={0.8}
+                />
+                <circle
+                  cx={560}
+                  cy={220}
+                  r={12}
+                  className="text-primary fill-primary"
+                  opacity={0.2}
+                />
               </svg>
             </div>
 
@@ -133,7 +173,10 @@ export function WhyUs() {
                   delay: 0.1 + index * 0.1,
                   ease: EASE_OUT,
                 }}
-                whileHover={{ scale: 1.02, transition: { type: "spring", duration: 0.4, bounce: 0.15 } }}
+                whileHover={{
+                  scale: 1.02,
+                  transition: { type: "spring", duration: 0.4, bounce: 0.15 },
+                }}
                 className="flex-1 flex flex-col justify-between rounded-2xl md:rounded-3xl bg-muted/50 border border-border/50 p-6 md:p-8 cursor-pointer"
               >
                 <h3 className="font-heading text-lg md:text-xl font-medium tracking-tighter text-foreground mb-4">
@@ -180,7 +223,10 @@ export function WhyUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.2, ease: EASE_OUT }}
-            whileHover={{ scale: 1.02, transition: { type: "spring", duration: 0.4, bounce: 0.15 } }}
+            whileHover={{
+              scale: 1.02,
+              transition: { type: "spring", duration: 0.4, bounce: 0.15 },
+            }}
             className="relative rounded-2xl md:rounded-3xl overflow-hidden min-h-[380px] md:min-h-[460px] md:col-span-2 lg:col-span-1 cursor-pointer"
           >
             <Image

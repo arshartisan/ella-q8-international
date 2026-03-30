@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { motion, useInView } from "framer-motion";
 import { Compass, Car, Clock, Mountain, ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import placeholderData from "@/data/placeholder.json";
@@ -8,6 +9,37 @@ import placeholderData from "@/data/placeholder.json";
 const { about } = placeholderData;
 
 const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as const;
+
+function CountUp({ value, duration = 2000 }: { value: string; duration?: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const target = parseFloat(value);
+  const isDecimal = value.includes(".");
+  const [display, setDisplay] = useState("0");
+
+  useEffect(() => {
+    if (!inView) return;
+
+    const start = performance.now();
+
+    function update(now: number) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = eased * target;
+
+      setDisplay(isDecimal ? current.toFixed(1) : Math.round(current).toString());
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }, [inView, target, duration, isDecimal]);
+
+  return <span ref={ref}>{display}</span>;
+}
 
 const iconMap: Record<string, React.ElementType> = {
   car: Car,
@@ -21,14 +53,16 @@ export function About() {
       <div className="px-4 md:px-8 lg:px-16 max-w-[1400px] mx-auto">
         {/* Top: Section label + Headline */}
         <div className="mb-12 md:mb-16">
+          {/* Section Label */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, ease: EASE_OUT }}
-            className="flex items-center gap-2 mb-6"
+            className="mb-4"
           >
             <span className="inline-block px-3 py-1 text-xs font-medium tracking-wider uppercase border border-border rounded-full text-muted-foreground">
+              <span className="inline-block w-2 h-2 rounded-full bg-primary mr-2" />
               {about.sectionLabel}
             </span>
           </motion.div>
@@ -57,7 +91,10 @@ export function About() {
             {/* Icon */}
             <div>
               <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center mb-4">
-                <Compass className="w-5 h-5 text-foreground/70" strokeWidth={1.5} />
+                <Compass
+                  className="w-5 h-5 text-foreground/70"
+                  strokeWidth={1.5}
+                />
               </div>
 
               <p className="text-foreground/80 text-sm md:text-base leading-relaxed tracking-tighter">
@@ -67,8 +104,6 @@ export function About() {
 
             {/* Content at bottom */}
             <div className="mt-8 space-y-5">
-
-
               {/* Tags */}
               <div className="flex flex-wrap gap-x-8 gap-y-4">
                 {about.card.tags.map((tag) => {
@@ -76,7 +111,7 @@ export function About() {
                   return (
                     <div
                       key={tag.label}
-                      className="flex items-center gap-2 text-sm text-foreground/70"
+                      className="flex items-center gap-2 text-base text-foreground/70"
                     >
                       <Icon className="w-3.5 h-3.5" strokeWidth={1.5} />
                       <span className="tracking-tighter">{tag.label}</span>
@@ -136,18 +171,18 @@ export function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.2, ease: EASE_OUT }}
-            className="relative flex flex-col justify-between rounded-2xl md:rounded-3xl bg-muted/40 border border-border/50 p-6 md:p-8 min-h-[360px] md:min-h-[420px] overflow-hidden"
+            className="relative flex flex-col justify-between rounded-2xl md:rounded-3xl bg-muted/40 border border-border/50 p-6 md:p-8 min-h-[360px] md:min-h-[420px]"
           >
-            {/* Scattered photo collage */}
+            {/* Fan-spread photo collage */}
             <div className="relative flex-1 flex items-center justify-center">
-              <div className="relative w-full h-48 md:h-56">
-                {/* Photo 1 - rotated left */}
+              <div className="relative flex items-center justify-center h-48 md:h-56">
+                {/* Photo 1 - left, rotated counter-clockwise */}
                 <motion.div
-                  initial={{ opacity: 0, rotate: -20 }}
-                  whileInView={{ opacity: 1, rotate: -12 }}
+                  initial={{ opacity: 0, rotate: -18 }}
+                  whileInView={{ opacity: 1, rotate: -10 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.4, ease: EASE_OUT }}
-                  className="absolute left-[5%] top-[10%] w-24 h-32 md:w-28 md:h-36 rounded-xl overflow-hidden shadow-lg border-2 border-background z-10"
+                  className="relative -mr-4 md:-mr-5 w-24 h-32 md:w-28 md:h-36 rounded-xl overflow-hidden shadow-lg border-2 border-background z-10 shrink-0 self-end"
                 >
                   <Image
                     src={about.gallery.images[0]}
@@ -157,13 +192,13 @@ export function About() {
                   />
                 </motion.div>
 
-                {/* Photo 2 - center, slight rotate */}
+                {/* Photo 2 - center, upright and overlapping */}
                 <motion.div
-                  initial={{ opacity: 0, rotate: 5 }}
-                  whileInView={{ opacity: 1, rotate: 3 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.5, ease: EASE_OUT }}
-                  className="absolute left-[28%] top-[5%] w-24 h-32 md:w-28 md:h-36 rounded-xl overflow-hidden shadow-lg border-2 border-background z-20"
+                  className="relative w-24 h-32 md:w-28 md:h-36 rounded-xl overflow-hidden shadow-xl border-2 border-background z-20 shrink-0 self-start"
                 >
                   <Image
                     src={about.gallery.images[1]}
@@ -173,13 +208,13 @@ export function About() {
                   />
                 </motion.div>
 
-                {/* Photo 3 - rotated right */}
+                {/* Photo 3 - right, rotated clockwise */}
                 <motion.div
-                  initial={{ opacity: 0, rotate: 15 }}
-                  whileInView={{ opacity: 1, rotate: 8 }}
+                  initial={{ opacity: 0, rotate: 18 }}
+                  whileInView={{ opacity: 1, rotate: 10 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.6, ease: EASE_OUT }}
-                  className="absolute right-[5%] top-[8%] w-24 h-32 md:w-28 md:h-36 rounded-xl overflow-hidden shadow-lg border-2 border-background z-10"
+                  className="relative -ml-4 md:-ml-5 w-24 h-32 md:w-28 md:h-36 rounded-xl overflow-hidden shadow-lg border-2 border-background z-10 shrink-0 self-end"
                 >
                   <Image
                     src={about.gallery.images[2]}
@@ -199,7 +234,7 @@ export function About() {
         </div>
 
         {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 max-w-5xl mx-auto">
           {about.stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -213,8 +248,8 @@ export function About() {
               }}
               className="text-center space-y-8"
             >
-              <p className="font-heading text-4xl md:text-5xl lg:text-[4.5rem] font-normal tracking-tight text-primary">
-                {stat.value}
+              <p className=" text-4xl md:text-5xl lg:text-[4.5rem] font-normal tracking-tighter text-primary">
+                <CountUp value={stat.value} />
                 <span className="text-foreground/60">{stat.suffix}</span>
               </p>
               <p className="capitalize text-xs md:text-base text-muted-foreground mt-1.5 tracking-tighter">

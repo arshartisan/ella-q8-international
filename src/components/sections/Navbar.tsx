@@ -49,10 +49,12 @@ export function Navbar() {
 
   const menuLinks = [
     { name: "Home", href: "#hero" },
-    { name: "Rooms", href: "#floor" },
-    { name: "Amenities", href: "#why-us" },
     { name: "About", href: "#about" },
-    { name: "Destinations", href: "#cities" },
+    { name: "Why Us", href: "#why-us" },
+    { name: "Accommodation", href: "#accommodation" },
+    { name: "Tours", href: "#tours" },
+    { name: "Destinations", href: "#destinations" },
+    { name: "Testimonials", href: "#testimonials" },
     { name: "Contact", href: "#footer" },
   ];
 
