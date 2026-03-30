@@ -171,7 +171,7 @@ export function TourPackages() {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
               className="flex items-center gap-2 px-5 py-2.5 bg-foreground text-background text-base tracking-tighter font-medium rounded-full hover:bg-foreground/90 transition-colors"
             >
-              See All Tours
+              {tourPackages.seeAllLabel}
             </motion.a>
             <motion.a
               href="#footer"
@@ -301,7 +301,7 @@ function TourCard({ tour }: { tour: Tour }) {
               className="w-4 h-4 text-muted-foreground shrink-0"
               strokeWidth={1.5}
             />
-            <span className="text-muted-foreground">Duration:</span>
+            <span className="text-muted-foreground">{tourPackages.labels.duration}</span>
             <span className="font-medium ml-auto">{tour.duration}</span>
           </div>
           <div className="flex items-center gap-3 text-base text-foreground">
@@ -309,7 +309,7 @@ function TourCard({ tour }: { tour: Tour }) {
               className="w-4 h-4 text-muted-foreground shrink-0"
               strokeWidth={1.5}
             />
-            <span className="text-muted-foreground">Meeting point:</span>
+            <span className="text-muted-foreground">{tourPackages.labels.meetingPoint}</span>
             <span className="font-medium ml-auto">{tour.meetingPoint}</span>
           </div>
           <div className="flex items-center gap-3 text-base text-foreground">
@@ -317,7 +317,7 @@ function TourCard({ tour }: { tour: Tour }) {
               className="w-4 h-4 text-muted-foreground shrink-0"
               strokeWidth={1.5}
             />
-            <span className="text-muted-foreground">Group Size:</span>
+            <span className="text-muted-foreground">{tourPackages.labels.groupSize}</span>
             <span className="font-medium ml-auto">{tour.groupSize}</span>
           </div>
         </div>
@@ -326,7 +326,7 @@ function TourCard({ tour }: { tour: Tour }) {
         <div className="grid grid-cols-2 gap-x-6 gap-y-4 mb-6 pt-5 border-t border-border/40">
           <div>
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">
-              Tour Type
+              {tourPackages.labels.tourType}
             </p>
             <p className="text-base font-medium text-foreground">
               {tour.tourType}
@@ -334,7 +334,7 @@ function TourCard({ tour }: { tour: Tour }) {
           </div>
           <div>
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">
-              Schedule
+              {tourPackages.labels.schedule}
             </p>
             <p className="text-base font-medium text-foreground">
               {tour.schedule}
@@ -342,7 +342,7 @@ function TourCard({ tour }: { tour: Tour }) {
           </div>
           <div>
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">
-              Level / Difficulty
+              {tourPackages.labels.level}
             </p>
             <p className="text-base font-medium text-foreground">
               {tour.level}
@@ -350,7 +350,7 @@ function TourCard({ tour }: { tour: Tour }) {
           </div>
           <div>
             <p className="text-xs uppercase tracking-widest text-muted-foreground mb-0.5">
-              Languages
+              {tourPackages.labels.languages}
             </p>
             <p className="text-base font-medium text-foreground">
               {tour.languages}
@@ -375,7 +375,7 @@ function TourCard({ tour }: { tour: Tour }) {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
               className="flex items-center justify-center px-6 py-2.5 bg-foreground text-background text-base tracking-tighter font-medium rounded-full hover:bg-foreground/90 transition-colors"
             >
-              Book This Tour
+              {tourPackages.bookTourLabel}
             </motion.a>
             <motion.a
               href="#footer"

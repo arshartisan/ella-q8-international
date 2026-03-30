@@ -15,13 +15,7 @@ function seededRandom(seed: number) {
   return x - Math.floor(x);
 }
 
-const avatars = [
-  "/assets/images/avatar/1.jpg",
-  "/assets/images/avatar/2.jpg",
-  "/assets/images/avatar/3.jpg",
-  "/assets/images/avatar/4.jpg",
-  "/assets/images/avatar/5.jpg",
-];
+const avatars = whyUs.avatars;
 
 export function WhyUs() {
   return (
@@ -231,7 +225,7 @@ export function WhyUs() {
           >
             <Image
               src={whyUs.featuredImage.src}
-              alt="Ella Q8 travel experience"
+              alt={whyUs.featuredImage.alt}
               fill
               className="object-cover"
             />

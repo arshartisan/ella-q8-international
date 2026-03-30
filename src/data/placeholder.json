@@ -104,6 +104,8 @@
       "email": "reservations@Ella Q8.com",
       "phone": "+1 (555) 789-0123"
     },
+    "menuButtonLabel": "Menu",
+    "contactLabel": "Contact",
     "socialLinks": [
       {
         "name": "Instagram",
@@ -144,6 +146,14 @@
     },
     "bottomText": "Experience The Perfect Blend Of Comfort And Nature, Crafted For Your Ultimate Escape.",
     "bookingBar": {
+      "roomLabel": "Room",
+      "checkInLabel": "Check-in",
+      "checkOutLabel": "Check-out",
+      "guestsLabel": "Guests",
+      "adultsLabel": "Adults",
+      "adultsAge": "Age 13+",
+      "childrenLabel": "Children",
+      "childrenAge": "Age 0–12",
       "rooms": [
         "Standard Room",
         "Family Suite",
@@ -274,6 +284,11 @@
   "accommodation": {
     "sectionLabel": "Our Rooms",
     "headline": "Experience the perfect blend of comfort and nature, crafted for your ultimate escape.",
+    "brandLabel": "Ella Q8 International",
+    "meetHostLabel": "Meet the Host",
+    "priceUnit": "/night",
+    "specsLabel": "Basic Information",
+    "bookNowLabel": "Book Now",
     "categories": [
       "Standard",
       "Deluxe",
@@ -406,8 +421,16 @@
         "showAvatars": true
       }
     ],
+    "avatars": [
+      "/assets/images/avatar/1.jpg",
+      "/assets/images/avatar/2.jpg",
+      "/assets/images/avatar/3.jpg",
+      "/assets/images/avatar/4.jpg",
+      "/assets/images/avatar/5.jpg"
+    ],
     "featuredImage": {
       "src": "/assets/images/about2.jpg",
+      "alt": "Ella Q8 travel experience",
       "caption": "See real moments from our trips."
     }
   },
@@ -570,11 +593,23 @@
         "icon": "instagram"
       }
     ],
+    "socialLabel": "Follow us",
     "copyright": "2026 Ella Q8 Hotels & Resorts. All rights reserved."
   },
   "tourPackages": {
     "sectionLabel": "Our Tours",
     "headline": "Find your perfect Ella experience",
+    "seeAllLabel": "See All Tours",
+    "bookTourLabel": "Book This Tour",
+    "labels": {
+      "duration": "Duration:",
+      "meetingPoint": "Meeting point:",
+      "groupSize": "Group Size:",
+      "tourType": "Tour Type",
+      "schedule": "Schedule",
+      "level": "Level / Difficulty",
+      "languages": "Languages"
+    },
     "tours": [
       {
         "id": "tea-waterfall",

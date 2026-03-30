@@ -214,7 +214,7 @@ export function Hero() {
                   </div>
                   <div className="flex-1 min-w-0 text-left">
                     <p className="text-[9px] sm:text-[8px] md:text-xs text-muted-foreground font-medium uppercase tracking-wider">
-                      Room
+                      {hero.bookingBar.roomLabel}
                     </p>
                     <div className="flex items-center gap-1">
                       <span className="text-xs font-medium text-foreground truncate">
@@ -242,7 +242,7 @@ export function Hero() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[9px] sm:text-[8px] md:text-xs text-muted-foreground font-medium uppercase tracking-wider">
-                        Check-in
+                        {hero.bookingBar.checkInLabel}
                       </p>
                       <div className="flex items-center gap-1">
                         <p className="text-xs font-medium text-foreground">
@@ -282,7 +282,7 @@ export function Hero() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[9px] sm:text-[8px] md:text-xs text-muted-foreground font-medium uppercase tracking-wider">
-                        Check-out
+                        {hero.bookingBar.checkOutLabel}
                       </p>
                       <div className="flex items-center gap-1">
                         <p className="text-xs font-medium text-foreground">
@@ -317,7 +317,7 @@ export function Hero() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground font-medium uppercase tracking-wider">
-                        Guests
+                        {hero.bookingBar.guestsLabel}
                       </p>
                       <div className="flex items-center gap-1">
                         <p className="text-xs font-medium text-foreground">
@@ -334,8 +334,8 @@ export function Hero() {
                     {/* Adults */}
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm font-medium">Adults</p>
-                        <p className="text-xs text-muted-foreground">Age 13+</p>
+                        <p className="text-sm font-medium">{hero.bookingBar.adultsLabel}</p>
+                        <p className="text-xs text-muted-foreground">{hero.bookingBar.adultsAge}</p>
                       </div>
                       <div className="flex items-center gap-3">
                         <Button
@@ -362,8 +362,8 @@ export function Hero() {
                     {/* Children */}
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm font-medium">Children</p>
-                        <p className="text-xs text-muted-foreground">Age 0–12</p>
+                        <p className="text-sm font-medium">{hero.bookingBar.childrenLabel}</p>
+                        <p className="text-xs text-muted-foreground">{hero.bookingBar.childrenAge}</p>
                       </div>
                       <div className="flex items-center gap-3">
                         <Button

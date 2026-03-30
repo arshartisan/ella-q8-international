@@ -163,13 +163,13 @@ function RoomCard({ room }: { room: RoomData }) {
       {/* Col 2: Title + Tagline */}
       <div className="p-5 border-t md:border-t-0 md:border-l border-border/60 flex flex-col justify-center">
         <p className="text-[10px] text-muted-foreground uppercase tracking-widest mb-2">
-          Ella Q8 International
+          {accommodation.brandLabel}
         </p>
         <h3 className="font-heading text-base md:text-2xl font-medium tracking-tight text-foreground mb-2 leading-snug">
           {room.tagline}
         </h3>
         <button className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors mt-auto cursor-pointer tracking-tighter">
-          Meet the Host
+          {accommodation.meetHostLabel}
           <ArrowUpRight className="w-3 h-3" />
         </button>
       </div>
@@ -181,7 +181,7 @@ function RoomCard({ room }: { room: RoomData }) {
           <p className="text-2xl md:text-5xl font-medium tracking-tight text-primary">
             {room.price}
             <span className="text-sm md:text-base font-normal text-muted-foreground">
-              /night
+              {accommodation.priceUnit}
             </span>
           </p>
           <p className="text-sm text-muted-foreground mt-0.5 tracking-tighter">
@@ -192,7 +192,7 @@ function RoomCard({ room }: { room: RoomData }) {
         {/* Specs table */}
         <div>
           <p className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider mb-2.5">
-            Basic Information
+            {accommodation.specsLabel}
           </p>
           <div className="space-y-2">
             {Object.entries(room.specs).map(([key, value]) => (
@@ -258,7 +258,7 @@ function RoomCard({ room }: { room: RoomData }) {
           transition={{ type: "spring", stiffness: 400, damping: 17 }}
           className="mt-5 flex items-center justify-center w-full py-3 bg-foreground text-background text-sm font-medium rounded-full hover:bg-primary transition-colors tracking-tighter"
         >
-          Book Now
+          {accommodation.bookNowLabel}
         </motion.a>
       </div>
     </div>

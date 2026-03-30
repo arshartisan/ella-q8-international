@@ -110,7 +110,7 @@ export function Footer() {
               </ul>
 
               {/* Social Links */}
-              <p className="text-white/50 text-xs mb-4 tracking-widest uppercase">Follow us</p>
+              <p className="text-white/50 text-xs mb-4 tracking-widest uppercase">{footer.socialLabel}</p>
               <div className="flex items-center gap-4">
                 {footer.socialLinks.map((social) => {
                   const Icon = iconMap[social.icon] || TwitterIcon;

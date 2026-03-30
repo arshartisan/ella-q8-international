@@ -47,16 +47,7 @@ export function Navbar() {
     };
   }, [isMenuOpen]);
 
-  const menuLinks = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Why Us", href: "#why-us" },
-    { name: "Accommodation", href: "#accommodation" },
-    { name: "Tours", href: "#tours" },
-    { name: "Destinations", href: "#destinations" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#footer" },
-  ];
+  const menuLinks = navbar.menuLinks;
 
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -106,7 +97,7 @@ export function Navbar() {
               <span className="w-5 h-[2px] bg-foreground rounded-full transition-all duration-200 group-hover:w-4" />
             </div>
             <span className="text-base tracking-tighter font-medium text-foreground hidden sm:block">
-              Menu
+              {navbar.menuButtonLabel}
             </span>
           </button>
         </nav>
@@ -184,7 +175,7 @@ export function Navbar() {
                 >
                   {/* Contact */}
                   <div>
-                    <p className="text-sm text-white/40 mb-3">Contact</p>
+                    <p className="text-sm text-white/40 mb-3">{navbar.contactLabel}</p>
                     <div className="space-y-1">
                       <a
                         href={`mailto:${navbar.contact.email}`}
