@@ -125,7 +125,7 @@
     "headline": "Find Your Perfect",
     "headlineAccent": "Stay",
     "description": "Discover Handpicked Luxury Rooms In Breathtaking Ella Town. Unplug, Unwind, And Reconnect With What Matters Most.",
-    "image": "/assets/images/hero4.png",
+    "image": "/assets/images/hero4.webp",
     "badges": [
       {
         "label": "Self Check-in",
@@ -191,14 +191,14 @@
       }
     },
     "featuredImage": {
-      "src": "/assets/images/about3.jpg",
+      "src": "/assets/images/about3.webp",
       "title": "Ella Explorer"
     },
     "gallery": {
       "images": [
         "/assets/images/about.png",
-        "/assets/images/about3.jpg",
-        "/assets/images/about2.jpg"
+        "/assets/images/about3.webp",
+        "/assets/images/about2.webp"
       ],
       "caption": "Stories and moments from travelers who explored Ella's highlands with us."
     },
@@ -233,7 +233,7 @@
         "id": "room-standard",
         "title": "Standard Mountain Room",
         "description": "Bright and comfortable room with tea estate views, queen bed, ensuite bathroom and local artwork.",
-        "image": "/assets/images/rooms/6.jpg",
+        "image": "/assets/images/rooms/6.webp",
         "size": "28 m2",
         "type": "Room",
         "style": "Warm rustic",
@@ -243,7 +243,7 @@
         "id": "family-suite",
         "title": "Family Suite",
         "description": "Spacious suite for families and groups with separate living area, kitchenette, and scenic balcony.",
-        "image": "/assets/images/rooms/2.jpg",
+        "image": "/assets/images/rooms/2.webp",
         "size": "55 m2",
         "type": "Suite",
         "style": "Local cottage",
@@ -253,7 +253,7 @@
         "id": "tee-estate-tour",
         "title": "Tea Estate & Waterfall Tour",
         "description": "Half-day guided tour combining a local tea estate walk with a visit to the famous Ella waterfalls. Includes picnic setup and local snacks.",
-        "image": "/assets/images/rooms/3.jpg",
+        "image": "/assets/images/rooms/3.webp",
         "size": "-",
         "type": "Tour",
         "style": "Outdoor",
@@ -263,7 +263,7 @@
         "id": "village-hike",
         "title": "Village Hike Experience",
         "description": "Guided hike through hidden village trails, ending with a traditional village lunch alongside a local family.",
-        "image": "/assets/images/rooms/4.jpg",
+        "image": "/assets/images/rooms/4.webp",
         "size": "-",
         "type": "Tour",
         "style": "Cultural",
@@ -273,7 +273,7 @@
         "id": "sunrise-ella-rock",
         "title": "Sunrise at Ella Rock",
         "description": "Sunrise trek to Ella Rock with photography stops, packed breakfast, and pick-up/drop-off included.",
-        "image": "/assets/images/rooms/5.jpg",
+        "image": "/assets/images/rooms/5.webp",
         "size": "-",
         "type": "Tour",
         "style": "Adventure",
@@ -304,7 +304,7 @@
         "rating": 4.5,
         "price": "$120",
         "priceNote": "including all taxes",
-        "image": "/assets/images/rooms/room4.jpg",
+        "image": "/assets/images/rooms/room4.webp",
         "specs": {
           "Total Rooms": "1 King + 1",
           "Bathrooms": "1 Attached",
@@ -330,7 +330,7 @@
         "rating": 4.7,
         "price": "$180",
         "priceNote": "including all taxes",
-        "image": "/assets/images/rooms/room1.jpg",
+        "image": "/assets/images/rooms/room1.webp",
         "specs": {
           "Total Rooms": "1 King + 2",
           "Bathrooms": "1 Attached",
@@ -356,7 +356,7 @@
         "rating": 4.8,
         "price": "$220",
         "priceNote": "including all taxes",
-        "image": "/assets/images/rooms/room2.jpg",
+        "image": "/assets/images/rooms/room2.webp",
         "specs": {
           "Total Rooms": "2 King + 2",
           "Bathrooms": "2 Attached",
@@ -382,7 +382,7 @@
         "rating": 4.9,
         "price": "$300",
         "priceNote": "including all taxes",
-        "image": "/assets/images/rooms/room3.jpg",
+        "image": "/assets/images/rooms/room3.webp",
         "specs": {
           "Total Rooms": "1 King + 1",
           "Bathrooms": "1 Attached + Outdoor",
@@ -422,14 +422,14 @@
       }
     ],
     "avatars": [
-      "/assets/images/avatar/1.jpg",
-      "/assets/images/avatar/2.jpg",
-      "/assets/images/avatar/3.jpg",
-      "/assets/images/avatar/4.jpg",
-      "/assets/images/avatar/5.jpg"
+      "/assets/images/avatar/1.webp",
+      "/assets/images/avatar/2.webp",
+      "/assets/images/avatar/3.webp",
+      "/assets/images/avatar/4.webp",
+      "/assets/images/avatar/5.webp"
     ],
     "featuredImage": {
-      "src": "/assets/images/about2.jpg",
+      "src": "/assets/images/about2.webp",
       "alt": "Ella Q8 travel experience",
       "caption": "See real moments from our trips."
     }
@@ -443,28 +443,28 @@
         "name": "Noor Khan",
         "role": "Nature Traveler",
         "quote": "The room was warm, clean, and close to all the best trails. The local tour to the tea estate was the highlight of our trip.",
-        "avatar": "/assets/images/avatar/1.jpg"
+        "avatar": "/assets/images/avatar/1.webp"
       },
       {
         "id": "testimonial-2",
         "name": "Ayesha Dissanayake",
         "role": "Couple",
         "quote": "Our guide made every place easy to reach and the local food recommendations were superb. It felt like you were staying with family.",
-        "avatar": "/assets/images/avatar/2.jpg"
+        "avatar": "/assets/images/avatar/2.webp"
       },
       {
         "id": "testimonial-3",
         "name": "Liam Ford",
         "role": "Adventure Seeker",
         "quote": "Ella Rock trek and waterfalls trip were perfectly organized. Great safety prep, friendly guides, and stunning views.",
-        "avatar": "/assets/images/avatar/3.jpg"
+        "avatar": "/assets/images/avatar/3.webp"
       },
       {
         "id": "testimonial-4",
         "name": "Priya Nair",
         "role": "Family Traveler",
         "quote": "Children loved the nature trails and the room gave us everything we needed. The entire team helped us make a memorable holiday.",
-        "avatar": "/assets/images/avatar/4.jpg"
+        "avatar": "/assets/images/avatar/4.webp"
       }
     ]
   },
@@ -499,7 +499,7 @@
       }
     ],
     "contactCard": {
-      "image": "/assets/images/faq.jpg",
+      "image": "/assets/images/faq.webp",
       "text": "Have more questions? Our team is happy to help.",
       "cta": {
         "label": "Get in touch",
@@ -514,7 +514,7 @@
       "subtitle": "Rooms, tours, and custom service ready for your arrival",
       "buttonLabel": "Contact us",
       "buttonHref": "mailto:hello@ellatownstays.com",
-      "backgroundImage": "/assets/images/footer2.jpg"
+      "backgroundImage": "/assets/images/footer2.webp"
     },
     "brand": {
       "name": "Ella Q8"
@@ -614,7 +614,7 @@
       {
         "id": "tea-waterfall",
         "title": "Tea Estate & Waterfall Tour",
-        "image": "/assets/images/tours/tea.jpg",
+        "image": "/assets/images/tours/tea.webp",
         "price": "$75",
         "priceUnit": "per person",
         "duration": "4 - 5 hours",
@@ -629,7 +629,7 @@
       {
         "id": "ella-rock",
         "title": "Ella Rock Sunrise Trek",
-        "image": "/assets/images/tours/ella.jpg",
+        "image": "/assets/images/tours/ella.webp",
         "price": "$85",
         "priceUnit": "per person",
         "duration": "5 - 6 hours",
@@ -644,7 +644,7 @@
       {
         "id": "village-hike",
         "title": "Village Hike Experience",
-        "image": "/assets/images/tours/hiking.jpg",
+        "image": "/assets/images/tours/hiking.webp",
         "price": "$65",
         "priceUnit": "per person",
         "duration": "3 - 4 hours",
@@ -659,7 +659,7 @@
       {
         "id": "nine-arch",
         "title": "Nine Arch Bridge & Train Ride",
-        "image": "/assets/images/tours/train.jpg",
+        "image": "/assets/images/tours/train.webp",
         "price": "$55",
         "priceUnit": "per person",
         "duration": "3 - 4 hours",
@@ -684,7 +684,7 @@
         "type": "Hill Country",
         "district": "Badulla",
         "description": "Home base — tea estates, waterfalls, and the famous Nine Arch Bridge nestled in misty highlands.",
-        "image": "/assets/images/destinations/ella.jpg",
+        "image": "/assets/images/destinations/ella.webp",
         "mapX": 62,
         "mapY": 68,
         "highlight": true
@@ -695,7 +695,7 @@
         "type": "Landmark",
         "district": "Badulla",
         "description": "An iconic colonial-era railway viaduct surrounded by lush jungle and tea plantations.",
-        "image": "/assets/images/destinations/nine.jpg",
+        "image": "/assets/images/destinations/nine.webp",
         "mapX": 65,
         "mapY": 66
       },
@@ -705,7 +705,7 @@
         "type": "Waterfall",
         "district": "Badulla",
         "description": "One of the widest waterfalls in Sri Lanka, tied to the ancient Ramayana legend.",
-        "image": "/assets/images/destinations/ravana.jpg",
+        "image": "/assets/images/destinations/ravana.webp",
         "mapX": 60,
         "mapY": 70
       },
@@ -715,7 +715,7 @@
         "type": "Hiking",
         "district": "Badulla",
         "description": "An easy scenic hike offering 360° views of Ella Gap and surrounding tea country.",
-        "image": "/assets/images/destinations/adma.jpg",
+        "image": "/assets/images/destinations/adma.webp",
         "mapX": 58,
         "mapY": 67
       },
@@ -725,7 +725,7 @@
         "type": "Wildlife Safari",
         "district": "Hambantota",
         "description": "Sri Lanka's most famous national park — home to leopards, elephants, and coastal lagoons.",
-        "image": "/assets/images/destinations/yala.jpg",
+        "image": "/assets/images/destinations/yala.webp",
         "mapX": 68,
         "mapY": 80
       },
@@ -735,7 +735,7 @@
         "type": "Beach",
         "district": "Matara",
         "description": "Golden sand beach famous for whale watching, surfing, and stunning sunsets.",
-        "image": "/assets/images/destinations/mirissa.jpg",
+        "image": "/assets/images/destinations/mirissa.webp",
         "mapX": 40,
         "mapY": 90
       },
@@ -745,7 +745,7 @@
         "type": "UNESCO Heritage",
         "district": "Matale",
         "description": "The ancient rock fortress and palace ruins — a UNESCO World Heritage Site rising 200m above the jungle.",
-        "image": "/assets/images/destinations/sigiriya.jpg",
+        "image": "/assets/images/destinations/sigiriya.webp",
         "mapX": 52,
         "mapY": 38
       },
@@ -755,7 +755,7 @@
         "type": "Cultural Capital",
         "district": "Kandy",
         "description": "Sacred city housing the Temple of the Tooth Relic, surrounded by hills and a serene lake.",
-        "image": "/assets/images/destinations/kandy.jpg",
+        "image": "/assets/images/destinations/kandy.webp",
         "mapX": 46,
         "mapY": 48
       },
@@ -765,7 +765,7 @@
         "type": "Hill Country",
         "district": "Nuwara Eliya",
         "description": "Known as 'Little England' — cool climate, colonial architecture, and the finest tea estates.",
-        "image": "/assets/images/destinations/nuwara.jpg",
+        "image": "/assets/images/destinations/nuwara.webp",
         "mapX": 50,
         "mapY": 60
       }
