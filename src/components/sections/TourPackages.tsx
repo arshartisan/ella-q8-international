@@ -39,44 +39,16 @@ export function TourPackages() {
   const tours = tourPackages.tours as Tour[];
   const totalSlides = tours.length;
 
-  const smoothScrollTo = useCallback(
-    (container: HTMLElement, targetLeft: number) => {
-      const start = container.scrollLeft;
-      const distance = targetLeft - start;
-      const duration = 500;
-      let startTime: number | null = null;
-
-      const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
-
-      const step = (timestamp: number) => {
-        if (!startTime) startTime = timestamp;
-        const elapsed = timestamp - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = easeOutCubic(progress);
-
-        container.scrollLeft = start + distance * eased;
-
-        if (progress < 1) {
-          requestAnimationFrame(step);
-        }
-      };
-
-      requestAnimationFrame(step);
-    },
-    [],
-  );
-
-  const scrollToIndex = useCallback(
-    (index: number) => {
-      const container = scrollRef.current;
-      if (!container) return;
-      const card = container.children[index] as HTMLElement;
-      if (!card) return;
-      const targetLeft = card.offsetLeft - container.offsetLeft;
-      smoothScrollTo(container, targetLeft);
-    },
-    [smoothScrollTo],
-  );
+  const scrollToIndex = useCallback((index: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const card = container.children[index] as HTMLElement;
+    if (!card) return;
+    container.scrollTo({
+      left: card.offsetLeft - container.offsetLeft,
+      behavior: "smooth",
+    });
+  }, []);
 
   const handlePrev = () => {
     const newIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
@@ -200,7 +172,7 @@ export function TourPackages() {
 
             <div
               ref={scrollRef}
-              className="flex gap-4 md:gap-5 overflow-x-auto snap-x snap-mandatory pb-8 -mb-6 px-1"
+              className="flex gap-4 md:gap-5 overflow-x-auto snap-x snap-proximity pb-8 -mb-6 px-1"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
             >
               {tours.map((tour) => (

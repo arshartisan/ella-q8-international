@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Star, ChevronDown, Calendar as CalendarIcon, Users, MapPin, Bed, Home, Minus, Plus } from "lucide-react";
 import { format } from "date-fns";
@@ -72,6 +72,11 @@ export function Hero() {
   const [checkInOpen, setCheckInOpen] = useState(false);
   const [checkOutOpen, setCheckOutOpen] = useState(false);
   const [guestsOpen, setGuestsOpen] = useState(false);
+  const [today, setToday] = useState<Date | undefined>(undefined);
+
+  useEffect(() => {
+    setToday(new Date());
+  }, []);
 
   return (
     <section
@@ -268,7 +273,7 @@ export function Hero() {
                         setCheckInOpen(false);
                       }
                     }}
-                    disabled={(date) => date < new Date()}
+                    disabled={(date) => today ? date < today : false}
                   />
                 </PopoverContent>
               </Popover>

@@ -70,10 +70,10 @@ export function Footer() {
           {/* CTA Button */}
           <Button
             asChild
-            className="bg-white text-foreground hover:bg-white/90 rounded-none px-1.5 py-5 gap-3 text-base"
+            className="bg-white text-foreground hover:bg-white/90 rounded-full px-1.5 py-5 gap-3 text-base"
           >
             <a href={footer.cta.buttonHref} className="tracking-tighter pr-4 ">
-              <span className="w-8 h-8 bg-primary flex items-center justify-center">
+              <span className="w-8 h-8 bg-primary flex items-center rounded-full justify-center">
                 <ArrowRight className="w-4 h-4 text-white" />
               </span>
               {footer.cta.buttonLabel}
